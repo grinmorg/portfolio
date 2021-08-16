@@ -25,14 +25,12 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### TODO:
 - Сделать калькулятор по верстке и создать табы
-- ФОН THREE.JS: Изменить фон как закончу курс
+- ФОН THREE.JS: проработать фон
 - Сделать preloader
-- Залить на GitHub (+ pages)
 
 - Firebase: Сохранять заявки с формы
-- Firebase: Придумать как удобно смотреть заявки
 
-#### Микро TODO:
+#### МикроTODO:
 - Выделить в отдельный компонент skills из Home.vue (по аналогии со SkillsStatus.vue)
 - Вынести skills во vuex
 
