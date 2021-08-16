@@ -1,0 +1,17 @@
+@keyframes gd-wave {
+    0% {
+        background: linear-gradient(90deg, rgba(64,176,127,1) 0%, rgba(171,108,246,1) 100%);
+    }
+    25% {
+        background: linear-gradient(90deg, rgba(64,176,127,1) 10%, rgba(171,108,246,1) 100%);
+    }
+    50% {
+        background: linear-gradient(90deg, rgba(64,176,127,1) 20%, rgba(171,108,246,1) 100%);
+    }
+    75% {
+        background: linear-gradient(90deg, rgba(64,176,127,1) 30%, rgba(171,108,246,1) 100%);
+    }
+    100% {
+        background: linear-gradient(90deg, rgba(64,176,127,1) 40%, rgba(171,108,246,1) 100%);
+    }
+}

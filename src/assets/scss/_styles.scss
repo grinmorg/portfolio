@@ -1,0 +1,131 @@
+@import "./mixins";
+@import "./animations";
+
+.container {
+    max-width: $maxWidth;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.title {
+    @include font(24px)
+}
+
+.subtitle {
+    font-size: 3rem;
+}
+
+.text {
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+
+    span {
+        color: var(--green-text);
+    }
+
+    &--big {
+        font-size: 2.4rem;
+    }
+}
+
+.gray-block {
+    padding: 2rem;
+    background: var(--bg-gray-block);
+    border-radius: 1rem;
+}
+
+// btns
+.btn {
+    background: none;
+    border: 2px solid var(--green-text);
+    border-radius: 8px;
+    font-size: 1.6rem;
+    padding: .5em 1em;
+    color: var(--white);
+
+    transition: .3s;
+    &:hover {
+        background: var(--green-text);
+        color: var(--bg-sidebar);
+    }
+}
+
+//form
+.form {
+    &__textarea,
+    &__name {
+        border: 2px solid var(--green--light);
+        padding: .45rem;
+        border-radius: .4rem;
+        font-size: 1.8rem;
+
+        &.error {
+            border-color: var(--error);
+
+            &:focus {
+                border: 2px solid var(--error--focus);
+            }
+        }
+
+        &:focus {
+            border: 2px solid var(--green);
+        }
+        &::placeholder {
+            font-size: 1.8rem;
+        }
+    }
+
+    &__textarea {
+        resize: none;
+        width: 100%;
+        height: auto;
+        min-height: 160px;
+        margin: 10px 0;
+    }
+    &__footer {
+        display: flex;
+        gap: 0 20px;
+    }
+
+    &__submit,
+    &__name {
+        flex: 0 0 calc(50% - 10px);
+    }
+
+    &__submit {
+        max-width: 140px;
+        margin-left: auto;
+        background: var(--green);
+        border: 2px solid var(--green);
+        border-radius: .45rem;
+        font-size: 1.4rem;
+        font-weight: bold;
+        color: var(--white);
+
+        &:focus {
+            background: var(--green--light);
+            border: 2px solid var(--green);
+            color: var(--bg-gray-block);
+        }
+    }
+
+    @include phones {
+        &__footer {
+            flex-direction: column;
+        }
+        &__submit,
+        &__name {
+            flex: 0 0 100%;
+        }
+        &__submit {
+            padding: .45rem 0;
+            margin-top: 5px;
+            width: 300px;
+        }
+    }
+}
+
+// helpers
+.mt-20 {
+    margin-top: 20px!important;
+}

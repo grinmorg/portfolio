@@ -1,0 +1,31 @@
+:root {
+    --bg-header: #0d0d0d;
+    --bg-body: #181818;
+    --bg-sidebar: #202020de;
+    --bg-sidebar-header: #121212;
+    --bg-gray-block: hsla(0, 0%, 20%, 0.95);
+    --bg-light-gray: hsl(0, 0%, 35%);
+    --bg-case: #333333;
+    --bg-case--light: #333333c7;
+    --white: #ffffff;
+    --white--light: rgba(255, 255, 255, 0.85);
+    --green: hsl(154, 47%, 47%);
+    --green--light: hsl(154, 47%, 70%);
+    --green-text: hsl(154, 47%, 55%);
+    --links-color: #AB6CF6;
+    --error: hsl(0, 50%, 65%);
+    --error--focus: hsl(0, 50%, 40%);
+
+    --gd-l-main: linear-gradient(90deg, rgba(64,176,127,1) 0%, rgba(171,108,246,1) 100%);
+
+    
+
+    --f_Play: "Play", sans-serif;
+
+
+    --z-popup: 9999;
+    --z-sidebar: 999;
+    --z-header: 998;
+}
+
+$maxWidth: 1170px;
