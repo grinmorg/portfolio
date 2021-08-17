@@ -36,7 +36,7 @@
       </p>
       <p class="text mt-20">
         <span>Остальное:</span><br />
-        Работаю с Git. Придерживаюсь БЭМ методологии в коде.
+        Работаю с Git. Придерживаюсь БЭМ методологии в коде. Пишу чистый и валидный код.
       </p>
     </div>
     <div class="gray-block mt-20">
@@ -48,9 +48,6 @@
           >Weblancer</a
         >
       </p>
-      <div class="serificates">
-        <silent-box :gallery="gallery"></silent-box>
-      </div>
     </div>
     <div class="gray-block mt-20">
       <h2 class="subtitle">Сертификаты:</h2>
