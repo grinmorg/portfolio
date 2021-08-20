@@ -15,8 +15,12 @@
           }"
         >
           <a :href="item.url" target="_blank" class="case__link">
-            <div class="case__img">
+            <div v-if="!item.ready" class="case__dev">в разработке</div>
+            <div v-if="item.img" class="case__img">
               <img :src="item.img" alt="photo" />
+            </div>
+            <div v-else class="case__preview">
+              <span>{{ item.name }}</span>
             </div>
             <p class="case__desc">{{ item.name }}</p>
             <ul class="tags">
@@ -36,7 +40,7 @@
 </template>
 
 <script>
-import emptyImg from '@/assets/img/sidebarHeader.jpeg'
+import emptyImg from "@/assets/img/sidebarHeader.jpeg";
 import workVzamke24 from "@/assets/img/works/vzamke24.png";
 import workExpertDoors from "@/assets/img/works/expertDoors.png";
 import workInrosFirst from "@/assets/img/works/inrosFirst.png";
@@ -50,27 +54,30 @@ export default {
         img: workVzamke24,
         name: "VZAMKE24",
         tags: ["Многостраничный сайт", "WordPress", "JQuery", "SASS", "Gulp"],
-        url: "https://vzamke24.ru/"
+        url: "https://vzamke24.ru/",
+        ready: true,
       },
       {
         img: workExpertDoors,
         name: "Expert Doors",
         tags: ["Сайт-каталог", "WordPress", "JQuery", "SASS", "Gulp"],
-        url: "https://expert-doors.ru/"
+        url: "https://expert-doors.ru/",
+        ready: true,
       },
       {
         img: workInrosFirst,
         name: "INROS Окна",
         tags: ["Многостраничный сайт", "WordPress", "JQuery", "SASS", "Gulp"],
-        url: "https://msk1.inros-gk.ru/"
+        url: "https://msk1.inros-gk.ru/",
+        ready: true,
       },
       {
-        img: emptyImg,
-        name: "Новый сайт",
-        tags: ["Сайт-сервис", "Vue.js", "Laravel", "SASS"],
-        url: "https://placeholder.com/"
+        img: null,
+        name: "Prisma",
+        tags: ["Сайт-сервис", "Vue.js", "Nuxt.js", "SASS"],
+        url: "https://placeholder.com/",
+        ready: false,
       },
-      
     ],
   }),
 };
@@ -100,6 +107,9 @@ export default {
   border-bottom: 1px solid var(--white);
   backdrop-filter: blur(4px);
   background-clip: padding-box;
+  position: relative;
+  overflow: hidden;
+
   &__desc {
     font-size: 2rem;
     padding: 1rem;
@@ -107,6 +117,7 @@ export default {
     text-align: center;
   }
   &__link {
+    width: 100%;
     color: var(--white);
   }
   &__img {
@@ -123,6 +134,30 @@ export default {
       border-radius: 25px 25px 0 0;
       object-fit: cover;
     }
+  }
+
+  &__preview {
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    span {
+      font-size: 4rem;
+      text-transform: uppercase;
+    }
+  }
+
+  &__dev {
+    width: 200px;
+    text-align: center;
+    position: absolute;
+    top: 50px;
+    right: -50px;
+    transform: rotate(45deg);
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    background: var(--green);
   }
 }
 
