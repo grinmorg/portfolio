@@ -24,13 +24,13 @@ yarn lint
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### TODO:
-- Сделать калькулятор по верстке и создать табы
+- Калькуляторы
 - ФОН THREE.JS: проработать фон
 - Сделать preloader
+- i18n (RU, EN)
 
 - Firebase: Сохранять заявки с формы
 
-#### МикроTODO:
-- Выделить в отдельный компонент skills из Home.vue (по аналогии со SkillsStatus.vue)
-- Вынести skills во vuex
+- Доделать Главную
+- Доработать сайдбар
 
