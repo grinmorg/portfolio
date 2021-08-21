@@ -20,16 +20,15 @@
             scale: 1.5,
           }"
         />
-        <p class="profile__name">Григорий Моргачев</p>
-        <p class="profile__prof">Веб-разработчик</p>
+        <p class="profile__name">{{ $t('base.fullname') }}</p>
+        <p class="profile__prof">{{ $t('base.work') }}</p>
         <p class="profile__text">
-          Занимаюсь разработкой сайтов.<br />
-          Работаю на фрилансе.
+          {{ $t('base.whatDo') }}
         </p>
       </div>
 
       <div class="social">
-        <p class="social__title">Мои контакты:</p>
+        <p class="social__title">{{ $t('base.myContacts') }}</p>
         <ul class="social__list">
           <li class="social__item">
             <a

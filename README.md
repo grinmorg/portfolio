@@ -28,6 +28,5 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 - ФОН THREE.JS: проработать фон
 - Доработать сайдбар
 - Сделать preloader
-- i18n (RU, EN)
 
 

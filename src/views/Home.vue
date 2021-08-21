@@ -1,11 +1,9 @@
 <template>
   <div class="container">
     <div class="gray-block">
-      <h1 class="title">Давайте знакомиться</h1>
+      <h1 class="title">{{ $t("home.title") }}</h1>
       <p class="text mt-20">
-        Меня зовут Григорий. В данный момент работаю на фрилансе.<br />
-        Занимаюсь созданием сайтов, как версткой, так и посадкой на CMS. Берусь
-        за сайты различной сложности, такие как: <span>Landing page</span>,
+        {{ $t("home.text") }}<span>Landing page</span>,
         <span>сайты-визитки</span>,<span> корпоративные сайты</span>,
         <span>сайты каталоги</span> и <span>инернет магазины</span>.
       </p>

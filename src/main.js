@@ -3,6 +3,9 @@ import App from "./App.vue";
 import store from "./store";
 import router from "./router";
 
+import {i18n} from './plugins/i18n'
+import FlagIcon from 'vue-flag-icon'
+
 import VueSilentbox from "vue-silentbox";
 import VueTilt from "vue-tilt.js";
 
@@ -27,11 +30,13 @@ router.afterEach((to) => {
 Vue.use(Toast, options);
 Vue.use(VueSilentbox);
 Vue.use(VueTilt);
+Vue.use(FlagIcon);
 
 Vue.config.productionTip = false;
 
 new Vue({
   store,
   router,
+  i18n,
   render: (h) => h(App),
 }).$mount("#app");

@@ -3,23 +3,37 @@
     <nav class="nav">
       <ul class="nav__list">
         <li class="nav__item">
-          <router-link class="nav__link" to="/">Обо мне</router-link>
+          <router-link class="nav__link" to="/">
+            {{ $t("header.aboutMe") }}
+          </router-link>
         </li>
         <li class="nav__item">
-          <router-link class="nav__link" to="/cases">Портфолио</router-link>
+          <router-link class="nav__link" to="/cases">
+            {{ $t("header.portfolio") }}
+          </router-link>
         </li>
         <li class="nav__item">
-          <router-link class="nav__link" to="/calcs">Калькуляторы</router-link>
+          <router-link class="nav__link" to="/calcs">
+            {{ $t("header.calcs") }}
+          </router-link>
         </li>
       </ul>
     </nav>
+    <div class="lang">
+      <button v-if="$i18n.locale === 'ru'" @click="setLocale('en')"><flag iso="us"></flag></button>
+      <button v-if="$i18n.locale === 'en'" @click="setLocale('ru')"><flag iso="ru"></flag></button>
+    </div>
   </header>
 </template>
 
 <script>
 export default {
   name: "Header",
-  
+  methods: {
+    setLocale(locale) {
+      this.$i18n.locale = locale;
+    },
+  },
 };
 </script>
 
@@ -62,7 +76,23 @@ export default {
     color: var(--white);
     font-family: var(--f_Play);
 
-    transition: .2s;
+    transition: 0.2s;
+  }
+}
+
+.lang {
+  margin-left: auto;
+  margin-right: 50px;
+  display: flex;
+  align-items: center;
+  button {
+    width: 50px;
+    height: 35px;
+    span {
+      width: 100%!important;
+      height: 100%;
+      background-size: contain;
+    }
   }
 }
 
@@ -79,5 +109,4 @@ export default {
     }
   }
 }
-
 </style>
