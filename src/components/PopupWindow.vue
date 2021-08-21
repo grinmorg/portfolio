@@ -1,6 +1,13 @@
 <template>
   <div class="popup" v-if="isOpen" @click.self="close">
-    <div class="popup__box">
+    <div
+      class="popup__box"
+      v-tilt="{
+        perspective: 1100,
+        speed: 100,
+        max: 3
+      }"
+    >
       <slot :close="close"> </slot>
     </div>
   </div>
@@ -45,37 +52,40 @@ export default {
   cursor: pointer;
   width: 100%;
   min-height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(53, 53, 53, 0.8);
   overflow: hidden;
   position: fixed;
   top: 0;
   left: 0;
   z-index: var(--z-popup);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   &__box {
     cursor: default;
-    margin: 150px auto 0px auto;
     width: 80%;
     max-width: 500px;
     height: auto;
     padding: 1.5rem;
-    background-color: var(--white--light);
+    background-color: var(--bg-sidebar);
     backdrop-filter: blur(2px);
     border-top: 2px solid var(--green);
     border-bottom: 2px solid var(--green);
     border-radius: 5px;
     box-shadow: 0px 0px 10px var(--bg-header);
-    color: var(--bg-header);
+    color: var(--white--light);
   }
 
   &__title {
     border-bottom: 2px solid var(--green);
-    padding-bottom: 15px;
+    padding: 15px 0 30px;
     font-size: 3rem;
     text-align: center;
   }
 
   &__text {
+    padding: 10px 0;
     margin-top: 10px;
     font-size: 2rem;
     text-align: center;

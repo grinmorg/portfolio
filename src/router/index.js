@@ -13,11 +13,13 @@ const routes = [
     path: "/cases",
     name: "Cases",
     component: () => import("@/views/Cases.vue"),
+    meta: { title: "Cases | GM" },
   },
   {
     path: "/calcs",
     name: "Calcs",
     component: () => import("@/views/Calcs.vue"),
+    meta: { title: "Calculate price | GM" },
   },
 ];
 

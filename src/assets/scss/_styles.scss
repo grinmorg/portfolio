@@ -8,7 +8,7 @@
 }
 
 .title {
-    @include font(24px)
+    @include font(24px);
 }
 
 .subtitle {
@@ -26,6 +26,9 @@
     &--big {
         font-size: 2.4rem;
     }
+    &-align-center {
+        text-align: center !important;
+    }
 }
 
 .gray-block {
@@ -35,18 +38,23 @@
 }
 
 // btns
+button {
+    background: none;
+    border: none;
+    padding: 0 0 0 5px;
+    color: var(--links-color);
+}
 .btn {
     background: none;
     border: 2px solid var(--green-text);
     border-radius: 8px;
     font-size: 1.6rem;
-    padding: .5em 1em;
+    padding: 0.5em 1em;
     color: var(--white);
 
-    transition: .3s;
+    transition: 0.3s;
     &:hover {
         background: var(--green-text);
-        color: var(--bg-sidebar);
     }
 }
 
@@ -54,10 +62,12 @@
 .form {
     &__textarea,
     &__name {
-        border: 2px solid var(--green--light);
-        padding: .45rem;
-        border-radius: .4rem;
+        border: 1px solid var(--green--light);
+        padding: 0.45rem;
+        border-radius: 0.4rem;
         font-size: 1.8rem;
+        background: var(--bg-gray-block);
+        color: var(--white--light);
 
         &.error {
             border-color: var(--error);
@@ -68,7 +78,7 @@
         }
 
         &:focus {
-            border: 2px solid var(--green);
+            border: 1px solid var(--green);
         }
         &::placeholder {
             font-size: 1.8rem;
@@ -97,7 +107,7 @@
         margin-left: auto;
         background: var(--green);
         border: 2px solid var(--green);
-        border-radius: .45rem;
+        border-radius: 0.45rem;
         font-size: 1.4rem;
         font-weight: bold;
         color: var(--white);
@@ -118,14 +128,44 @@
             flex: 0 0 100%;
         }
         &__submit {
-            padding: .45rem 0;
+            padding: 0.45rem 0;
             margin-top: 5px;
             width: 300px;
         }
     }
 }
 
+// tags
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 15px;
+    padding: 1rem 1rem 2rem;
+
+    &__item {
+        display: flex;
+        align-items: center;
+        background: var(--white);
+        color: var(--bg-case);
+        font-size: 1.4rem;
+        text-transform: uppercase;
+        padding: 0.25rem 0.5rem;
+        border-radius: 5px;
+
+        &::before {
+            content: "";
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--bg-case);
+            display: block;
+            margin-right: 0.5rem;
+        }
+    }
+}
+
 // helpers
 .mt-20 {
-    margin-top: 20px!important;
+    margin-top: 20px !important;
 }

@@ -15,11 +15,11 @@
       title="Показать сайдбар"
     ></div>
     <main class="main">
-      <router-view />
+      <router-view @openPopupCallback="openPopupCallback" />
     </main>
     <three-bg />
 
-    <callback-popup :open="isOpenCallbackPopup" @close="closePopupCallback"/>
+    <callback-popup :open="isOpenCallbackPopup" @close="closePopupCallback" />
   </div>
 </template>
 
@@ -89,22 +89,36 @@ body {
   }
   .show-sidebar {
     display: block;
-    width: 3.5rem;
-    height: 3.5rem;
-    position: absolute;
+    width: 5rem;
+    height: 5rem;
+    position: fixed;
     top: 5.5rem;
     left: 3rem;
-    border-bottom: 5px solid var(--green-text);
-    border-left: 5px solid var(--green-text);
-    transform: rotate(45deg);
+    background: var(--white);
+    border-radius: 50%;
     cursor: pointer;
     z-index: 1001;
 
-    transition: 0.3s;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: calc(50% - 1rem);
+      left: calc(50% - 0.5rem);
+      width: 2rem;
+      height: 2rem;
+      border-bottom: 5px solid var(--green-text);
+      border-left: 5px solid var(--green-text);
+      transform: rotate(45deg);
+      transition: 0.3s;
+    }
   }
 
   .show-sidebar.active {
-    transform: rotate(-135deg);
+    &::before {
+      transform: rotate(-135deg);
+      left: calc(50% - 1.2rem);
+    }
   }
 }
 </style>

@@ -26,11 +26,8 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ### TODO:
 - Калькуляторы
 - ФОН THREE.JS: проработать фон
+- Доработать сайдбар
 - Сделать preloader
 - i18n (RU, EN)
 
-- Firebase: Сохранять заявки с формы
-
-- Доделать Главную
-- Доработать сайдбар
 

@@ -161,34 +161,7 @@ export default {
   }
 }
 
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 15px;
-  padding: 1rem 1rem 2rem;
 
-  &__item {
-    display: flex;
-    align-items: center;
-    background: var(--white);
-    color: var(--bg-case);
-    font-size: 1.4rem;
-    text-transform: uppercase;
-    padding: 0.25rem 0.5rem;
-    border-radius: 5px;
-
-    &::before {
-      content: "";
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: var(--bg-case);
-      display: block;
-      margin-right: 0.5rem;
-    }
-  }
-}
 
 @include tablets {
   .title {
