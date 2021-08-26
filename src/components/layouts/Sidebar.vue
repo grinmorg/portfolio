@@ -20,15 +20,15 @@
             scale: 1.5,
           }"
         />
-        <p class="profile__name">{{ $t('base.fullname') }}</p>
-        <p class="profile__prof">{{ $t('base.work') }}</p>
+        <p class="profile__name">{{ $t("base.fullname") }}</p>
+        <p class="profile__prof">{{ $t("base.work") }}</p>
         <p class="profile__text">
-          {{ $t('base.whatDo') }}
+          {{ $t("base.whatDo") }}
         </p>
       </div>
 
       <div class="social">
-        <p class="social__title">{{ $t('base.myContacts') }}</p>
+        <p class="social__title">{{ $t("base.myContacts") }}</p>
         <ul class="social__list">
           <li class="social__item">
             <a
@@ -52,7 +52,7 @@
       </div>
 
       <button class="btn" @click="$emit('openPopupCallback')">
-        Связаться со мной
+        {{ $t("base.ContactWithMe") }}
       </button>
     </div>
   </aside>

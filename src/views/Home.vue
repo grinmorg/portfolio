@@ -3,11 +3,14 @@
     <div class="gray-block">
       <h1 class="title">{{ $t("home.title") }}</h1>
       <p class="text mt-20">
-        {{ $t("home.text") }}<span>Landing page</span>,
-        <span>сайты-визитки</span>,<span> корпоративные сайты</span>,
-        <span>сайты каталоги</span> и <span>инернет магазины</span>.
+        {{ $t("home.text") }}<span>{{ $t("home.textSpans.1") }}</span
+        >, <span>{{ $t("home.textSpans.2") }}</span
+        >,<span> {{ $t("home.textSpans.3") }}</span
+        >, <span>{{ $t("home.textSpans.4") }}</span> {{ $t("base.and") }}
+        <span>{{ $t("home.textSpans.5") }}</span
+        >.
       </p>
-      <h2 class="subtitle mt-20 text-align-center">Стек технологий:</h2>
+      <h2 class="subtitle mt-20 text-align-center">{{ $t("home.stackTech.title") }}:</h2>
       <div class="skills">
         <div class="skills__left">
           <p class="skills__title">Стандартный</p>
