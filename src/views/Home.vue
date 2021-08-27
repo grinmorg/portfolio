@@ -10,7 +10,9 @@
         <span>{{ $t("home.textSpans.5") }}</span
         >.
       </p>
-      <h2 class="subtitle mt-20 text-align-center">{{ $t("home.stackTech.title") }}:</h2>
+      <h2 class="subtitle mt-20 text-align-center">
+        {{ $t("home.stackTech.title") }}:
+      </h2>
       <div class="skills">
         <div class="skills__left">
           <p class="skills__title">{{ $t("home.stackTech.vars.1") }}</p>
@@ -207,6 +209,15 @@ export default {
     },
   }),
   components: {},
+  computed: {
+    skillsStandartTranslate() {
+      return [
+        { id: 1, name: this.$t("options.1") },
+        { id: 2, name: this.$t("options.2") },
+        { id: 3, name: this.$t("options.3") },
+      ];
+    },
+  },
 };
 </script>
 

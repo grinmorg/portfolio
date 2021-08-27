@@ -36,8 +36,8 @@ export const i18n = new VueI18n({
           title: "Technology stack",
           vars: {
             1: "Standard",
-            2: "Modern"
-          }
+            2: "Modern",
+          },
         },
       },
     },
@@ -69,7 +69,21 @@ export const i18n = new VueI18n({
           title: "Стек технологий",
           vars: {
             1: "Стандартный",
-            2: "Совеременный"
+            2: "Совеременный",
+          },
+          list: {
+            standart: {
+              1: {
+                name: "Языки программирования",
+                tags: {
+                  1: "PHP",
+                  2: "JavaScript",
+                }
+              }
+            },
+            modern: {
+
+            }
           }
         },
       },
