@@ -34,6 +34,10 @@ export const i18n = new VueI18n({
         },
         stackTech: {
           title: "Technology stack",
+          vars: {
+            1: "Standard",
+            2: "Modern"
+          }
         },
       },
     },
@@ -63,6 +67,10 @@ export const i18n = new VueI18n({
         },
         stackTech: {
           title: "Стек технологий",
+          vars: {
+            1: "Стандартный",
+            2: "Совеременный"
+          }
         },
       },
     },

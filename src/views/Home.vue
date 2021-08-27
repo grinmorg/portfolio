@@ -13,7 +13,7 @@
       <h2 class="subtitle mt-20 text-align-center">{{ $t("home.stackTech.title") }}:</h2>
       <div class="skills">
         <div class="skills__left">
-          <p class="skills__title">Стандартный</p>
+          <p class="skills__title">{{ $t("home.stackTech.vars.1") }}</p>
           <ul class="skills__list">
             <li
               class="skills__item"
@@ -42,7 +42,7 @@
           </p>
         </div>
         <div class="skills__right">
-          <p class="skills__title">Совеременный</p>
+          <p class="skills__title">{{ $t("home.stackTech.vars.2") }}</p>
           <ul class="skills__list">
             <li
               class="skills__item"
