@@ -19,7 +19,7 @@
           <ul class="skills__list">
             <li
               class="skills__item"
-              v-for="(skill, idx) in skills.default"
+              v-for="(skill, idx) in skillsStandartTranslate"
               :key="idx"
             >
               <p class="skills__name">{{ skill.name }}</p>
@@ -34,21 +34,17 @@
               </ul>
             </li>
           </ul>
-          <p class="skills__desc">
-            Вполне обычный стек на котором функционирует большинство сайтов.<br />
-            Из плюсов можно отметить большое количество готовых решений и
-            скорость разработки. А из минусов - сложность реализации
-            сайтов-сервисов, да и вообще высоконагруженных сайтов.<br />
-            Подойдет для лендингов, небольших многостраничных сайтов или
-            интернет-магазов с количеством товара меньше 5 000 шт.
-          </p>
+          <p
+            class="skills__desc"
+            v-html="$t('home.stackTech.standartDesc')"
+          ></p>
         </div>
         <div class="skills__right">
           <p class="skills__title">{{ $t("home.stackTech.vars.2") }}</p>
           <ul class="skills__list">
             <li
               class="skills__item"
-              v-for="(skill, idx) in skills.modern"
+              v-for="(skill, idx) in skillsModernTranslate"
               :key="idx"
             >
               <p class="skills__name">{{ skill.name }}</p>
@@ -63,26 +59,16 @@
               </ul>
             </li>
           </ul>
-          <p class="skills__desc">
-            На данном стеке можно отстроить сайт с возможностью самого
-            амбициозного масштабирования.<br />
-            Из плюсов можно выделить скорость загрузки, так как небходимые
-            страницы, да и вообще части кода загружаются по мере необходимости,
-            можно даже сказать "налету". Так же возможность реализации сложных
-            проектов без "костылей". Ну а из минусов, это скорость разработки и
-            соотственно бюджета на такой проект понадобиться больше.<br />
-            Если у вас сложный проект, например большой интернет-магазин или
-            многопользовательский сервис, то этот вариант будет лучше.
-          </p>
+          <p class="skills__desc" v-html="$t('home.stackTech.modernDesc')"></p>
         </div>
       </div>
       <p class="text mt-20">
-        <span>Верстка:</span><br />
+        <span>{{ $t("base.htmlCoding") }}:</span><br />
         Верстаю по БЭМ методологии. Владею Flexbox и Grid версткой.
         Автоматизирую свою работу с помощью Gulp
       </p>
       <p class="text mt-20">
-        <span>Инструменты:</span><br />
+        <span>{{ $t("base.tools") }}:</span><br />
         Для быстрой разработки интерфейсов: <span>Bootstrap</span>,
         <span>Material-UI</span>, <span>Vuetify</span> и другие. <br />
         Для создание красивой анимации: <span>Three.js</span>,
@@ -96,7 +82,7 @@
         <router-link to="/cases">портфолио</router-link>
       </p>
       <p class="text mt-20">
-        <span>Остальное:</span><br />
+        <span>{{ $t("base.others") }}:</span><br />
         Работаю с Git. Придерживаюсь БЭМ методологии в коде. Пишу чистый и
         валидный код.
       </p>
@@ -165,56 +151,87 @@ export default {
         thumbnailHeight: "380px",
       },
     ],
-    skills: {
-      default: [
-        {
-          name: "Языки программирования",
-          tags: ["PHP", "JavaScript"],
-        },
-        {
-          name: "CMS",
-          tags: ["WordPress", "MODX Revo"],
-        },
-        {
-          name: "Базы данных",
-          tags: ["MySQL"],
-        },
-        {
-          name: "Интерактивные элементы",
-          tags: ["Bootstrap", "JQuery", "GSAP", "WOW.js"],
-        },
-      ],
-      modern: [
-        {
-          name: "Языки программирования",
-          tags: ["JavaScript"],
-        },
-        {
-          name: "Фронтенд",
-          tags: ["Vue.js", "Nuxt.js"],
-        },
-        {
-          name: "CMS",
-          tags: ["strapi"],
-        },
-        {
-          name: "Базы данных",
-          tags: ["MongoDB", "MySQL"],
-        },
-        {
-          name: "Интерактивные элементы",
-          tags: ["Vuetify", "Three.js", "GSAP"],
-        },
-      ],
-    },
   }),
   components: {},
   computed: {
     skillsStandartTranslate() {
       return [
-        { id: 1, name: this.$t("options.1") },
-        { id: 2, name: this.$t("options.2") },
-        { id: 3, name: this.$t("options.3") },
+        {
+          id: 1,
+          name: this.$t("home.stackTech.list.standart.1.name"),
+          tags: {
+            1: this.$t("home.stackTech.list.standart.1.tags.1"),
+            2: this.$t("home.stackTech.list.standart.1.tags.2"),
+          },
+        },
+        {
+          id: 2,
+          name: this.$t("home.stackTech.list.standart.2.name"),
+          tags: {
+            1: this.$t("home.stackTech.list.standart.2.tags.1"),
+            2: this.$t("home.stackTech.list.standart.2.tags.2"),
+          },
+        },
+        {
+          id: 3,
+          name: this.$t("home.stackTech.list.standart.3.name"),
+          tags: {
+            1: this.$t("home.stackTech.list.standart.3.tags.1"),
+          },
+        },
+        {
+          id: 4,
+          name: this.$t("home.stackTech.list.standart.4.name"),
+          tags: {
+            1: this.$t("home.stackTech.list.standart.4.tags.1"),
+            2: this.$t("home.stackTech.list.standart.4.tags.2"),
+            3: this.$t("home.stackTech.list.standart.4.tags.3"),
+            4: this.$t("home.stackTech.list.standart.4.tags.4"),
+          },
+        },
+      ];
+    },
+    skillsModernTranslate() {
+      return [
+        {
+          id: 1,
+          name: this.$t("home.stackTech.list.modern.1.name"),
+          tags: {
+            1: this.$t("home.stackTech.list.modern.1.tags.1"),
+          },
+        },
+        {
+          id: 2,
+          name: this.$t("home.stackTech.list.modern.2.name"),
+          tags: {
+            1: this.$t("home.stackTech.list.modern.2.tags.1"),
+            2: this.$t("home.stackTech.list.modern.2.tags.2"),
+          },
+        },
+        {
+          id: 3,
+          name: this.$t("home.stackTech.list.modern.3.name"),
+          tags: {
+            1: this.$t("home.stackTech.list.modern.3.tags.1"),
+          },
+        },
+        {
+          id: 4,
+          name: this.$t("home.stackTech.list.modern.4.name"),
+          tags: {
+            1: this.$t("home.stackTech.list.modern.4.tags.1"),
+            2: this.$t("home.stackTech.list.modern.4.tags.2"),
+          },
+        },
+        {
+          id: 5,
+          name: this.$t("home.stackTech.list.modern.5.name"),
+          tags: {
+            1: this.$t("home.stackTech.list.modern.5.tags.1"),
+            2: this.$t("home.stackTech.list.modern.5.tags.2"),
+            3: this.$t("home.stackTech.list.modern.5.tags.3"),
+          },
+        },
       ];
     },
   },
