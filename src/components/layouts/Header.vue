@@ -87,11 +87,11 @@ export default {
   align-items: center;
   button {
     width: 50px;
-    height: 35px;
+    height: 32px;
     span {
       width: 100%!important;
       height: 100%;
-      background-size: contain;
+      background-size: cover;
     }
   }
 }

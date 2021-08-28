@@ -15,7 +15,9 @@
           }"
         >
           <a :href="item.url" target="_blank" class="case__link">
-            <div v-if="!item.ready" class="case__dev">в разработке</div>
+            <div v-if="!item.ready" class="case__dev">
+              {{ $t("base.indev") }}
+            </div>
             <div v-if="item.img" class="case__img">
               <img :src="item.img" alt="photo" />
             </div>
@@ -29,7 +31,16 @@
                 v-for="(tag, idxTag) in item.tags"
                 :key="idxTag"
               >
-                {{ tag }}
+                <span v-if="tag === 'Многостраничный сайт'">{{
+                  $t("base.multipage")
+                }}</span>
+                <span v-else-if="tag === 'Сайт-каталог'">{{
+                  $t("base.catalog")
+                }}</span>
+                <span v-else-if="tag === 'Сайт-сервис'">{{
+                  $t("base.service")
+                }}</span>
+                <span v-else>{{ tag }}</span>
               </li>
             </ul>
           </a>
@@ -160,8 +171,6 @@ export default {
     background: var(--green);
   }
 }
-
-
 
 @include tablets {
   .title {

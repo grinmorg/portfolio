@@ -64,27 +64,24 @@
       </div>
       <p class="text mt-20">
         <span>{{ $t("base.htmlCoding") }}:</span><br />
-        Верстаю по БЭМ методологии. Владею Flexbox и Grid версткой.
-        Автоматизирую свою работу с помощью Gulp
+        {{ $t("home.p.htmlCoding") }}
       </p>
       <p class="text mt-20">
         <span>{{ $t("base.tools") }}:</span><br />
-        Для быстрой разработки интерфейсов: <span>Bootstrap</span>,
-        <span>Material-UI</span>, <span>Vuetify</span> и другие. <br />
-        Для создание красивой анимации: <span>Three.js</span>,
+        {{ $t("home.p.tools.1") }}: <span>Bootstrap</span>,
+        <span>Material-UI</span>, <span>Vuetify</span> {{ $t("home.p.tools.2") }} <br />
+        {{ $t("home.p.tools.3") }}: <span>Three.js</span>,
         <span>GSAP</span>, <span>WOW.js</span>
       </p>
       <p class="text mt-20">
         <span>CMS:</span><br />
-        Уверенно владею такими CMS как <span>WordPress</span> и
-        <span>Modx Revo</span>. <br />Сданные проекты "под ключ" с этими CMS вы
-        можете посмотреть у меня в
-        <router-link to="/cases">портфолио</router-link>
+        {{ $t("home.p.cms.1") }} <span>WordPress</span> и
+        <span>Modx Revo</span>. <br />{{ $t("home.p.cms.2") }}
+        <router-link to="/cases">{{ $t("home.header.portfolio") }}</router-link>
       </p>
       <p class="text mt-20">
         <span>{{ $t("base.others") }}:</span><br />
-        Работаю с Git. Придерживаюсь БЭМ методологии в коде. Пишу чистый и
-        валидный код.
+        {{ $t("home.p.others") }}
       </p>
     </div>
     <div class="gray-block mt-20">

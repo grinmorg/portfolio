@@ -19,6 +19,10 @@ export const i18n = new VueI18n({
         htmlCoding: "HTML-Coding",
         tools: "Tools",
         others: "Others",
+        multipage: "multi-page site",
+        catalog: "site-catalog",
+        service: "site-service",
+        indev: "in developing",
       },
       header: {
         aboutMe: "About me",
@@ -145,6 +149,10 @@ export const i18n = new VueI18n({
         htmlCoding: "Верстка",
         tools: "Инструменты",
         others: "Другое",
+        multipage: "многостраничный сайт",
+        catalog: "сайт-каталог",
+        service: "сайт-сервис",
+        indev: "в разработке",
       },
       header: {
         aboutMe: "Обо мне",
