@@ -3,81 +3,32 @@
     <div class="gray-block">
       <h1 class="title">{{ $t("home.title") }}</h1>
       <p class="text mt-20">
-        {{ $t("home.text") }}<span>{{ $t("home.textSpans.1") }}</span
+        <strong v-html="$t('home.text')"></strong>
+        <span>{{ $t("home.textSpans.1") }}</span
         >, <span>{{ $t("home.textSpans.2") }}</span
         >,<span> {{ $t("home.textSpans.3") }}</span
         >, <span>{{ $t("home.textSpans.4") }}</span> {{ $t("base.and") }}
         <span>{{ $t("home.textSpans.5") }}</span
         >.
       </p>
-      <h2 class="subtitle mt-20 text-align-center">
-        {{ $t("home.stackTech.title") }}:
-      </h2>
-      <div class="skills">
-        <div class="skills__left">
-          <p class="skills__title">{{ $t("home.stackTech.vars.1") }}</p>
-          <ul class="skills__list">
-            <li
-              class="skills__item"
-              v-for="(skill, idx) in skillsStandartTranslate"
-              :key="idx"
-            >
-              <p class="skills__name">{{ skill.name }}</p>
-              <ul class="tags">
-                <li
-                  class="tags__item"
-                  v-for="(tag, tagID) in skill.tags"
-                  :key="tagID"
-                >
-                  {{ tag }}
-                </li>
-              </ul>
-            </li>
-          </ul>
-          <p
-            class="skills__desc"
-            v-html="$t('home.stackTech.standartDesc')"
-          ></p>
-        </div>
-        <div class="skills__right">
-          <p class="skills__title">{{ $t("home.stackTech.vars.2") }}</p>
-          <ul class="skills__list">
-            <li
-              class="skills__item"
-              v-for="(skill, idx) in skillsModernTranslate"
-              :key="idx"
-            >
-              <p class="skills__name">{{ skill.name }}</p>
-              <ul class="tags">
-                <li
-                  class="tags__item"
-                  v-for="(tag, tagID) in skill.tags"
-                  :key="tagID"
-                >
-                  {{ tag }}
-                </li>
-              </ul>
-            </li>
-          </ul>
-          <p class="skills__desc" v-html="$t('home.stackTech.modernDesc')"></p>
-        </div>
-      </div>
+      <h2 class="subtitle mt-20">{{ $t("home.skillsTitle") }}:</h2>
       <p class="text mt-20">
         <span>{{ $t("base.htmlCoding") }}:</span><br />
-        {{ $t("home.p.htmlCoding") }}
+        <strong v-html="$t('home.p.htmlCoding')"></strong>
       </p>
       <p class="text mt-20">
         <span>{{ $t("base.tools") }}:</span><br />
         {{ $t("home.p.tools.1") }}: <span>Bootstrap</span>,
-        <span>Material-UI</span>, <span>Vuetify</span> {{ $t("home.p.tools.2") }} <br />
-        {{ $t("home.p.tools.3") }}: <span>Three.js</span>,
-        <span>GSAP</span>, <span>WOW.js</span>
+        <span>Material-UI</span>, <span>Vuetify</span>
+        {{ $t("home.p.tools.2") }} <br />
+        {{ $t("home.p.tools.3") }}: <span>Three.js</span>, <span>GSAP</span>,
+        <span>WOW.js</span>
       </p>
       <p class="text mt-20">
         <span>CMS:</span><br />
         {{ $t("home.p.cms.1") }} <span>WordPress</span> и
         <span>Modx Revo</span>. <br />{{ $t("home.p.cms.2") }}
-        <router-link to="/cases">{{ $t("home.header.portfolio") }}</router-link>
+        <router-link to="/cases">{{ $t("header.portfolio") }}</router-link>
       </p>
       <p class="text mt-20">
         <span>{{ $t("base.others") }}:</span><br />
@@ -85,31 +36,30 @@
       </p>
     </div>
     <div class="gray-block mt-20">
-      <h2 class="subtitle">Как работаю:</h2>
+      <h2 class="subtitle">{{ $t("home.howIwork.title") }}:</h2>
       <p class="text mt-20">
-        Работаю через любой мессенджер, по предоплате в 30%. <br />
-        Но вы можете<button @click="$emit('openPopupCallback')">
-          написать мне
+        {{ $t("home.howIwork.p.1") }} <br />
+        {{ $t("home.howIwork.p.2") }}<button @click="$emit('openPopupCallback')">
+          {{ $t("home.howIwork.span.1") }}
         </button>
-        и предложить свои условия сотруднечества. <br />Из бирж работаю на
-        <a href="https://kwork.ru/user/gr1nmorg" target="_blank">Kwork</a> и
+        {{ $t("home.howIwork.p.3") }} <br />{{ $t("home.howIwork.p.4") }}
+        <a href="https://kwork.ru/user/gr1nmorg" target="_blank">Kwork</a>
+        <!--  и
         <a href="https://www.weblancer.net/users/GrinMorg/" target="_blank"
           >Weblancer</a
-        >
+        > -->
       </p>
     </div>
     <div class="gray-block mt-20">
-      <h2 class="subtitle text-align-center">Сертификаты:</h2>
+      <h2 class="subtitle text-align-center">{{ $t("home.certif.title") }}:</h2>
       <p class="text mt-20 text-align-center">
-        При изучении необходимых мне инструментов в основоном руководствуюсь
-        оффициальной документацией и не приобретаю платные курсы.<br />
-        Поэтому сертификатов о прохождении у меня немного 😃<br />
-        Тем не менее в начале своего пути я проходил уроки на
+        {{ $t("home.certif.p.1") }}<br />
+        {{ $t("home.certif.p.2") }} 😃<br />
+        {{ $t("home.certif.p.3") }}
         <a href="https://www.freecodecamp.org/grinmorg" target="_blank"
           >FREECODECAMP</a
-        >, заложив уверенную базу и получив там несколько сертификатов. <br />
-        Могу с уверенностью посоветовать данную площадку каждому, кто начинает
-        осваивать веб-технологии.
+        >{{ $t("home.certif.p.4") }}<br />
+        {{ $t("home.certif.p.5") }}
       </p>
       <div class="serificates">
         <silent-box :gallery="gallery"></silent-box>
@@ -151,86 +101,7 @@ export default {
   }),
   components: {},
   computed: {
-    skillsStandartTranslate() {
-      return [
-        {
-          id: 1,
-          name: this.$t("home.stackTech.list.standart.1.name"),
-          tags: {
-            1: this.$t("home.stackTech.list.standart.1.tags.1"),
-            2: this.$t("home.stackTech.list.standart.1.tags.2"),
-          },
-        },
-        {
-          id: 2,
-          name: this.$t("home.stackTech.list.standart.2.name"),
-          tags: {
-            1: this.$t("home.stackTech.list.standart.2.tags.1"),
-            2: this.$t("home.stackTech.list.standart.2.tags.2"),
-          },
-        },
-        {
-          id: 3,
-          name: this.$t("home.stackTech.list.standart.3.name"),
-          tags: {
-            1: this.$t("home.stackTech.list.standart.3.tags.1"),
-          },
-        },
-        {
-          id: 4,
-          name: this.$t("home.stackTech.list.standart.4.name"),
-          tags: {
-            1: this.$t("home.stackTech.list.standart.4.tags.1"),
-            2: this.$t("home.stackTech.list.standart.4.tags.2"),
-            3: this.$t("home.stackTech.list.standart.4.tags.3"),
-            4: this.$t("home.stackTech.list.standart.4.tags.4"),
-          },
-        },
-      ];
-    },
-    skillsModernTranslate() {
-      return [
-        {
-          id: 1,
-          name: this.$t("home.stackTech.list.modern.1.name"),
-          tags: {
-            1: this.$t("home.stackTech.list.modern.1.tags.1"),
-          },
-        },
-        {
-          id: 2,
-          name: this.$t("home.stackTech.list.modern.2.name"),
-          tags: {
-            1: this.$t("home.stackTech.list.modern.2.tags.1"),
-            2: this.$t("home.stackTech.list.modern.2.tags.2"),
-          },
-        },
-        {
-          id: 3,
-          name: this.$t("home.stackTech.list.modern.3.name"),
-          tags: {
-            1: this.$t("home.stackTech.list.modern.3.tags.1"),
-          },
-        },
-        {
-          id: 4,
-          name: this.$t("home.stackTech.list.modern.4.name"),
-          tags: {
-            1: this.$t("home.stackTech.list.modern.4.tags.1"),
-            2: this.$t("home.stackTech.list.modern.4.tags.2"),
-          },
-        },
-        {
-          id: 5,
-          name: this.$t("home.stackTech.list.modern.5.name"),
-          tags: {
-            1: this.$t("home.stackTech.list.modern.5.tags.1"),
-            2: this.$t("home.stackTech.list.modern.5.tags.2"),
-            3: this.$t("home.stackTech.list.modern.5.tags.3"),
-          },
-        },
-      ];
-    },
+   
   },
 };
 </script>

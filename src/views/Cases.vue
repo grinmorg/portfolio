@@ -84,8 +84,8 @@ export default {
       },
       {
         img: null,
-        name: "Prisma",
-        tags: ["Сайт-сервис", "Vue.js", "Nuxt.js", "SASS"],
+        name: "REMONT24",
+        tags: ["Многостраничный сайт", "WordPress", "JQuery", "SASS", "Gulp"],
         url: "https://placeholder.com/",
         ready: false,
       },
