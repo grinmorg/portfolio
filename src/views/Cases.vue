@@ -55,6 +55,7 @@ import emptyImg from "@/assets/img/sidebarHeader.jpeg";
 import workVzamke24 from "@/assets/img/works/vzamke24.png";
 import workExpertDoors from "@/assets/img/works/expertDoors.png";
 import workInrosFirst from "@/assets/img/works/inrosFirst.png";
+import workRemont24 from "@/assets/img/works/remontgeneratorov.png";
 
 export default {
   name: "Cases",
@@ -83,11 +84,11 @@ export default {
         ready: true,
       },
       {
-        img: null,
+        img: workRemont24,
         name: "REMONT24",
         tags: ["Многостраничный сайт", "WordPress", "JQuery", "SASS", "Gulp"],
-        url: "https://placeholder.com/",
-        ready: false,
+        url: "https://remontgenerator.ru/",
+        ready: true,
       },
     ],
   }),
