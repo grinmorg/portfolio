@@ -56,12 +56,20 @@ import workVzamke24 from "@/assets/img/works/vzamke24.png";
 import workExpertDoors from "@/assets/img/works/expertDoors.png";
 import workInrosFirst from "@/assets/img/works/inrosFirst.png";
 import workRemont24 from "@/assets/img/works/remontgeneratorov.png";
+import sovfinLand from "@/assets/img/works/sovfin.png";
 
 export default {
   name: "Cases",
   data: () => ({
     emptyImg,
     cases: [
+      {
+        img: sovfinLand,
+        name: "СОВФИН.РФ",
+        tags: ["Лендинг", "SASS", "Gulp"],
+        url: "https://xn--b1ampbou.xn--p1ai/",
+        ready: false,
+      },
       {
         img: workVzamke24,
         name: "VZAMKE24",
