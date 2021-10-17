@@ -98,6 +98,13 @@ export default {
         url: "https://remontgenerator.ru/",
         ready: true,
       },
+      {
+        img: emptyImg,
+        name: "Moscow Remont",
+        tags: ["Многостраничный сайт", "WordPress", "JQuery", "SASS", "Gulp"],
+        url: "https://remont-p.com/",
+        ready: false,
+      },
     ],
   }),
 };
