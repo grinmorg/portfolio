@@ -39,7 +39,8 @@
       <h2 class="subtitle">{{ $t("home.howIwork.title") }}:</h2>
       <p class="text mt-20">
         {{ $t("home.howIwork.p.1") }} <br />
-        {{ $t("home.howIwork.p.2") }}<button @click="$emit('openPopupCallback')">
+        {{ $t("home.howIwork.p.2")
+        }}<button @click="$emit('openPopupCallback')">
           {{ $t("home.howIwork.span.1") }}
         </button>
         {{ $t("home.howIwork.p.3") }} <br />{{ $t("home.howIwork.p.4") }}
@@ -98,10 +99,11 @@ export default {
         thumbnailHeight: "380px",
       },
     ],
+    markdown: "# Hello World",
   }),
   components: {},
   computed: {
-   
+    
   },
 };
 </script>
