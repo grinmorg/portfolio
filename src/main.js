@@ -3,8 +3,12 @@ import App from "./App.vue";
 import store from "./store";
 import router from "./router";
 
-import {i18n} from './plugins/i18n'
-import FlagIcon from 'vue-flag-icon'
+// vue-select
+import vSelect from "vue-select";
+import 'vue-select/dist/vue-select.css';
+
+import { i18n } from "./plugins/i18n";
+import FlagIcon from "vue-flag-icon";
 
 import VueSilentbox from "vue-silentbox";
 import VueTilt from "vue-tilt.js";
@@ -26,6 +30,8 @@ router.afterEach((to) => {
     document.title = to.meta.title || DEFAULT_TITLE;
   });
 });
+
+Vue.component("v-select", vSelect);
 
 Vue.use(Toast, options);
 Vue.use(VueSilentbox);
