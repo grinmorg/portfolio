@@ -23,7 +23,13 @@
       <TabFullSite v-if="activeTab === 'fullSite'" />
     </transition>
     <p class="calcs__endprice">
-      Примерная стоимость: от <span> <em>{{ CALC_END_PRICE }}</em> руб.</span>
+      Примерная стоимость: от
+      <span>
+        <em>{{ CALC_END_PRICE }}</em> руб.</span
+      >
+    </p>
+    <p class="calcs__desc">
+      (цена примерная, для более точной цены - свяжитесь со мной)
     </p>
   </div>
 </template>
@@ -60,7 +66,7 @@ export default {
   text-align: center;
   font-size: 2rem;
 }
-.calcs__endprice span em{
+.calcs__endprice span em {
   color: var(--green);
   font-weight: 700;
 }
