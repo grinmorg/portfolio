@@ -12,6 +12,8 @@
     "core-js": "^3.6.5",
     "firebase": "^8.7.1",
     "marked": "^3.0.7",
+    "popper-vue": "^0.1.8",
+    "popper.js": "^1.16.1",
     "three": "^0.129.0",
     "vue": "^2.6.11",
     "vue-flag-icon": "^1.0.6",

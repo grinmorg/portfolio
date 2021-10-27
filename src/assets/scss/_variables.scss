@@ -17,11 +17,18 @@
     --error: hsl(0, 50%, 65%);
     --error--focus: hsl(0, 50%, 40%);
 
+    --neu-bg: #26282A;
+    --neu-bg--transp90: #26282aee;
+    --neu-bg-gd: linear-gradient(180deg, #394253 0%, var(--neu-bg) 147.23%);
+    --neu-text: rgba(255, 255, 255, 0.65);
+
     --gd-l-main: linear-gradient(90deg, rgba(64,176,127,1) 0%, rgba(171,108,246,1) 100%);
 
     
 
     --f_Play: "Play", sans-serif;
+
+    --neu-bs: -1px -3px 6px rgba(97, 102, 107, 0.5), 4px 6px 10px rgba(0, 0, 0, 0.5);
 
 
     --z-popup: 9999;

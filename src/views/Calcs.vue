@@ -6,43 +6,55 @@
         :class="{ active: activeTab === 'HTMLcode' }"
         @click="changeTab('HTMLcode')"
       >
-        Вёрстка
+        {{ $t("base.htmlCoding") }}
       </div>
       <div
         class="tabs__item"
         :class="{ active: activeTab === 'fullSite' }"
         @click="changeTab('fullSite')"
       >
-        Сайт "ключ"
+        {{ $t("base.fullSite") }}
       </div>
     </div>
     <transition name="fade">
-      <TabHtmlCode v-if="activeTab === 'HTMLcode'" />
+      <TabHtmlCode v-show="activeTab === 'HTMLcode'" />
     </transition>
     <transition name="fade">
-      <TabFullSite v-if="activeTab === 'fullSite'" />
+      <TabFullSite v-show="activeTab === 'fullSite'" />
     </transition>
     <p class="calcs__endprice">
-      Примерная стоимость: от
+      {{ $t("calc.price.text") }}
       <span>
-        <em>{{ CALC_END_PRICE }}</em> руб.</span
+        <em>{{ CALC_END_PRICE }}</em> {{ $t("calc.price.currency") }}</span
       >
     </p>
     <p class="calcs__desc">
-      (цена примерная, для более точной цены - свяжитесь со мной)
+      ({{ $t("calc.desc") }} -
+      <button @click="$emit('openPopupCallback')">
+        {{ $t("base.ContactWithMe") }}</button
+      >)
     </p>
   </div>
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 
 export default {
   data: () => ({
     activeTab: "HTMLcode",
   }),
   methods: {
+    ...mapActions({
+      changeEndPrice: "SAVE_CALC_END_PRICE",
+    }),
     changeTab(name) {
+      // Сбрасываю цену при переключении таба
+      if(this.activeTab !== name) {
+        this.changeEndPrice(0);
+      }
+
+      // Переключаю таб
       this.activeTab = name;
     },
   },
@@ -70,14 +82,14 @@ export default {
   color: var(--green);
   font-weight: 700;
 }
-.fade-enter-active,
-.fade-leave-active {
-  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+.calcs__desc {
+  text-align: center;
+  font-size: 1.2rem;
 }
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-  transform: translateX(10px);
-  opacity: 0;
+.calcs__desc button {
+  text-transform: lowercase;
 }
+
 @media screen and (max-width: 1050px) {
   .calcs.gray-block {
     margin: 0 10px;

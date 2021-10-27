@@ -62,12 +62,13 @@ button {
 .form {
     &__textarea,
     &__name {
-        border: 1px solid var(--green--light);
-        padding: 0.45rem;
-        border-radius: 0.4rem;
+        background: var(--neu-bg);
+        box-shadow: inset -5px -5px 10px rgba(57, 66, 83, 0.25), inset 5px 5px 10px #2c3341;
+        border-radius: 12px;
+        color: var(--neu-text);
         font-size: 1.8rem;
-        background: var(--bg-gray-block);
-        color: var(--white--light);
+        padding: 0.45rem;
+        transition: box-shadow 0.3s;
 
         &.error {
             border-color: var(--error);
@@ -78,10 +79,11 @@ button {
         }
 
         &:focus {
-            border: 1px solid var(--green);
+            box-shadow: inset -5px -5px 10px rgba(57, 66, 83, 0.25), inset 2px 2px 5px var(--green);
         }
         &::placeholder {
             font-size: 1.8rem;
+            color: var(--neu-text);
         }
     }
 
@@ -105,17 +107,19 @@ button {
     &__submit {
         max-width: 140px;
         margin-left: auto;
-        background: var(--green);
-        border: 2px solid var(--green);
-        border-radius: 0.45rem;
         font-size: 1.4rem;
         font-weight: bold;
-        color: var(--white);
+        background: linear-gradient(331.93deg, #1d222e 11.88%, #293140 85.18%);
+        border: 2px solid rgba(29, 34, 46, 0.1);
+        box-shadow: -10px -10px 20px rgba(57, 66, 83, 0.35), 10px 10px 20px rgba(24, 28, 39, 0.35);
+        color: var(--neu-text);
 
         &:focus {
-            background: var(--green--light);
-            border: 2px solid var(--green);
-            color: var(--bg-gray-block);
+            background: linear-gradient(137.81deg, #1d222e 21.35%, #293140 106.56%);
+            border: 3px solid rgba(41, 49, 64, 0.65);
+            box-shadow: -5px -5px 10px rgba(72, 80, 99, 0.1), 5px 5px 10px rgba(24, 28, 39, 0.35),
+                inset -2px -2px 4px rgba(72, 80, 99, 0.35), inset 5px 5px 5px #1d222e;
+            color: var(--white);
         }
     }
 
@@ -170,6 +174,41 @@ button {
     margin-top: 20px !important;
 }
 
+// poppers
+#popper-content {
+    padding: 1rem;
+    background: var(--neu-bg--transp90);
+    box-shadow: var(--neu-bs);
+    color: var(--white);
+    border-radius: 2.5rem;
+    font-size: 1.6rem;
+    max-width: 30rem;
+    z-index: var(--z-popup);
+
+    .green-text {
+        color: var(--green);
+        font-weight: 700;
+    }
+}
+
+// fade transition
+.fade-enter-active,
+.fade-leave-active {
+    transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    transform: translateX(10px);
+    opacity: 0;
+}
+
+.fade-top-enter-active,
+.fade-top-leave-active {
+    transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
+}
+.fade-top-enter, .fade-top-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    transform: translateY(-10px);
+    opacity: 0;
+}
+
 @import "./components/tabs";
 @import "./components/calc";
-

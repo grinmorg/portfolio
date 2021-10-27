@@ -5,7 +5,11 @@ import router from "./router";
 
 // vue-select
 import vSelect from "vue-select";
-import 'vue-select/dist/vue-select.css';
+import "vue-select/dist/vue-select.css";
+
+// Popper
+import { Popper } from "popper-vue";
+import "popper-vue/dist/popper-vue.css";
 
 import { i18n } from "./plugins/i18n";
 import FlagIcon from "vue-flag-icon";
@@ -32,6 +36,8 @@ router.afterEach((to) => {
 });
 
 Vue.component("v-select", vSelect);
+
+Vue.component("Popper", Popper);
 
 Vue.use(Toast, options);
 Vue.use(VueSilentbox);

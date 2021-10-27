@@ -2,12 +2,40 @@
   <div class="calc calc--1">
     <div class="calc__block">
       <div class="calc-item calc-item--dropdown">
-        <label class="calc-item__title">Количество страниц:</label>
+        <Popper
+          :is-open="boolPopperCountPage"
+          :anchor-el="$refs.popperCountPage"
+          placement="top"
+        >
+          <div id="popper-content">Укажите количество страниц для вёрстки</div>
+        </Popper>
+        <label
+          ref="popperCountPage"
+          @mouseover="showPopper('boolPopperCountPage')"
+          @mouseleave="hidePopper('boolPopperCountPage')"
+          class="calc-item__title"
+          >Количество страниц:</label
+        >
         <v-select v-model="selectedCountPage" :options="CountPage"> </v-select>
       </div>
       <div class="calc-item calc-item--checkbox">
+        <Popper
+          :is-open="boolPopperAdaptiv"
+          :anchor-el="$refs.popperAdaptiv"
+          placement="top"
+        >
+          <div id="popper-content">
+            Адаптация нужна для нормального отображения вашего сайта на всех
+            устройствах, от телефона до ПК
+          </div>
+        </Popper>
         <input type="checkbox" v-model="boolAdaptiv" id="html_coding_2" />
-        <label for="html_coding_2" class="calc-item__title"
+        <label
+          ref="popperAdaptiv"
+          @mouseover="showPopper('boolPopperAdaptiv')"
+          @mouseleave="hidePopper('boolPopperAdaptiv')"
+          for="html_coding_2"
+          class="calc-item__title"
           >Нужна ли адаптация:
           <em class="toogle"></em>
         </label>
@@ -15,30 +43,97 @@
     </div>
     <div class="calc__block">
       <div class="calc-item calc-item--dropdown">
-        <label class="calc-item__title">Количество блоков на странице:</label>
+        <Popper
+          :is-open="boolPopperCountBlocks"
+          :anchor-el="$refs.popperCountBlocks"
+          placement="top"
+        >
+          <div id="popper-content">
+            Если количество блоков на страницах разное - укажите среднее
+            значение
+          </div>
+        </Popper>
+        <label
+          ref="popperCountBlocks"
+          @mouseover="showPopper('boolPopperCountBlocks')"
+          @mouseleave="hidePopper('boolPopperCountBlocks')"
+          class="calc-item__title"
+          >Количество блоков на странице:</label
+        >
         <v-select v-model="selectedCountBlocks" :options="CountBlocks">
         </v-select>
       </div>
       <div class="calc-item calc-item--checkbox">
+        <Popper
+          :is-open="boolPopperLightAnimate"
+          :anchor-el="$refs.popperLightAnimate"
+          placement="top"
+        >
+          <div id="popper-content">
+            Такая анимация сделает ваш сайт более приятным для пользователя.
+            Блоки будут плавно появлятся при скролее. Динамические элементы так
+            же будут анимированы при взаимодейсвии с пользователем
+          </div>
+        </Popper>
         <input type="checkbox" v-model="boolLightAnimate" id="html_coding_3" />
-        <label for="html_coding_3" class="calc-item__title"
-          >Легкая анимация:
+        <label
+          ref="popperLightAnimate"
+          @mouseover="showPopper('boolPopperLightAnimate')"
+          @mouseleave="hidePopper('boolPopperLightAnimate')"
+          for="html_coding_3"
+          class="calc-item__title"
+          >Легкая анимация (CSS/JS):
           <em class="toogle"></em>
         </label>
       </div>
     </div>
     <div class="calc__block">
       <div class="calc-item calc-item--checkbox">
+        <Popper
+          :is-open="boolPopperScripts"
+          :anchor-el="$refs.popperScripts"
+          placement="top"
+        >
+          <div id="popper-content">
+            Простые скрипты типо бургер-меню, слайдеров и тп. уже входят в
+            стоимость работ. Под "Сложными JS-скриптами" подразумеваются скрипты
+            реализующие более сложный функционал, например квизы, калькуляторы,
+            мини-игры и тп.
+          </div>
+        </Popper>
         <input type="checkbox" v-model="boolScripts" id="html_coding_4" />
-        <label for="html_coding_4" class="calc-item__title"
+        <label
+          ref="popperScripts"
+          @mouseover="showPopper('boolPopperScripts')"
+          @mouseleave="hidePopper('boolPopperScripts')"
+          for="html_coding_4"
+          class="calc-item__title"
           >Сложные JS-скрипты:
           <em class="toogle"></em>
         </label>
       </div>
       <div class="calc-item calc-item--checkbox">
+        <Popper
+          :is-open="boolPopperHardAnimate"
+          :anchor-el="$refs.popperHardAnimate"
+          placement="top"
+        >
+          <div id="popper-content">
+            Пример такой анимации - задний фон на этом сайте, который
+            представляет из себя анимированные 3d объекты.
+            <span class="green-text">Внимание!</span> Если вы выбираете данный
+            пункт, то опция "Сложные JS-скрипты" должна быть так же выбрана
+          </div>
+        </Popper>
         <input type="checkbox" v-model="boolHardAnimate" id="html_coding_5" />
-        <label for="html_coding_5" class="calc-item__title">
-          <span>Тяжелая анимация:</span>
+        <label
+          ref="popperHardAnimate"
+          @mouseover="showPopper('boolPopperHardAnimate')"
+          @mouseleave="hidePopper('boolPopperHardAnimate')"
+          for="html_coding_5"
+          class="calc-item__title"
+        >
+          Тяжелая JS-анимация:
           <em class="toogle"></em>
         </label>
       </div>
@@ -52,14 +147,22 @@ import { mapActions } from "vuex";
 export default {
   data: () => ({
     CountPage: ["Лендинг", "1 - 3", "3 - 6", "6 - 10", "10 - 15", "более 15"],
-    selectedCountPage: "",
+    selectedCountPage: "Выбирайте нужный пункт в выпадающем списке",
     CountBlocks: ["1 - 5", "5 - 10", "10 - 15", "более 15"],
-    selectedCountBlocks: "",
+    selectedCountBlocks: "Выбирайте нужный пункт в выпадающем списке",
     boolAdaptiv: true,
     boolLightAnimate: false,
     boolScripts: false,
     boolHardAnimate: false,
     endprice: 0,
+
+    // Poppers
+    boolPopperAdaptiv: false,
+    boolPopperCountPage: false,
+    boolPopperCountBlocks: false,
+    boolPopperLightAnimate: false,
+    boolPopperScripts: false,
+    boolPopperHardAnimate: false,
   }),
   methods: {
     ...mapActions({
@@ -68,6 +171,9 @@ export default {
     totalPrice() {
       const priceBlock = 450; // цена за блок
       let pageMultiplier = 1; // множетель за страницы
+
+      // сбрасываю цену
+      this.endprice = 0;
 
       // страницы
       if (this.selectedCountPage == "Лендинг") {
@@ -89,13 +195,14 @@ export default {
         pageMultiplier = 5;
       }
 
-      if (this.CountBlocks == "1 - 5") {
+      // Блоки
+      if (this.selectedCountBlocks == "1 - 5") {
         this.endprice += priceBlock * 3 * pageMultiplier;
-      } else if (this.selectedCountPage == "5 - 10") {
+      } else if (this.selectedCountBlocks == "5 - 10") {
         this.endprice += priceBlock * 7 * pageMultiplier;
-      } else if (this.selectedCountPage == "10 - 15") {
+      } else if (this.selectedCountBlocks == "10 - 15") {
         this.endprice += priceBlock * 12 * pageMultiplier;
-      } else if (this.selectedCountPage == "более 15") {
+      } else if (this.selectedCountBlocks == "более 15") {
         this.endprice += priceBlock * 18 * pageMultiplier;
       }
 
@@ -116,8 +223,19 @@ export default {
       if (this.boolAdaptiv) {
         this.endprice += this.endprice / 2;
       }
-      // console.log(this.selectedCountPage == 'Лендинг')
-      this.changeEndPrice(this.endprice);
+
+      // Отдаю цену
+      if (this.$i18n.locale === "ru") {
+        this.changeEndPrice(this.endprice);
+      } else {
+        this.changeEndPrice(Math.round(this.endprice / 70));
+      }
+    },
+    showPopper(name) {
+      this[name] = !this[name];
+    },
+    hidePopper(name) {
+      this[name] = false;
     },
   },
   watch: {
@@ -127,16 +245,64 @@ export default {
     selectedCountBlocks() {
       this.totalPrice();
     },
-    boolAdaptiv() {
+    boolAdaptiv(val) {
+      if (!val) {
+        this.$toast.warning(
+          "Вы потеряете большое кол-во трафика. Так как большинство пользователей будут использовать телефоны для просмотра вашего сайта!",
+          {
+            position: "top-right",
+            timeout: 10000,
+            closeOnClick: true,
+            pauseOnFocusLoss: true,
+            pauseOnHover: true,
+            draggable: true,
+            draggablePercent: 0.6,
+            showCloseButtonOnHover: false,
+            closeButton: "button",
+            icon: true,
+            rtl: false,
+          }
+        );
+      }
       this.totalPrice();
     },
     boolLightAnimate() {
       this.totalPrice();
     },
-    boolScripts() {
+    boolScripts(val) {
+      if (this.boolHardAnimate) {
+        if (!val) {
+          this.$toast.warning(
+            'Данная опция является обязатеьной, так как выбрана опция "Тяжелая анимация" ',
+            {
+              position: "top-right",
+              timeout: 3000,
+              closeOnClick: true,
+              pauseOnFocusLoss: true,
+              pauseOnHover: true,
+              draggable: true,
+              draggablePercent: 0.6,
+              showCloseButtonOnHover: false,
+              closeButton: "button",
+              icon: true,
+              rtl: false,
+            }
+          );
+          setTimeout(() => {
+            this.boolScripts = true;
+          }, 500);
+        }
+      }
       this.totalPrice();
     },
-    boolHardAnimate() {
+    boolHardAnimate(val) {
+      if (val && !this.boolScripts) {
+        this.boolScripts = true;
+      }
+      this.totalPrice();
+    },
+    "$i18n.locale"() {
+      // при смене языка пересчитает по новой
       this.totalPrice();
     },
   },

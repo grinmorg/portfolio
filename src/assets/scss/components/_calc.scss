@@ -76,6 +76,9 @@
         }
 
         &--dropdown {
+            label {
+                cursor: pointer;
+            }
             .vs__dropdown-toggle {
                 background: linear-gradient(47.94deg, #2c3341 19.6%, #313949 77.32%);
                 border: 2px solid rgba(49, 57, 73, 0.5);

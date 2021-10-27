@@ -1,16 +1,11 @@
 <template>
-  <div class="popup" v-if="isOpen" @click.self="close">
-    <div
-      class="popup__box"
-      v-tilt="{
-        perspective: 1100,
-        speed: 100,
-        max: 3
-      }"
-    >
-      <slot :close="close"> </slot>
+  <transition name="fade-top">
+    <div class="popup" v-if="isOpen" @click.self="close">
+      <div class="popup__box">
+        <slot :close="close"> </slot>
+      </div>
     </div>
-  </div>
+  </transition>
 </template>
 
 <script>
@@ -67,8 +62,8 @@ export default {
     width: 80%;
     max-width: 500px;
     height: auto;
-    padding: 1.5rem;
-    background-color: var(--bg-sidebar);
+    padding: 3rem 1.5rem;
+    background: var(--neu-bg-gd);
     backdrop-filter: blur(2px);
     border-top: 2px solid var(--green);
     border-bottom: 2px solid var(--green);

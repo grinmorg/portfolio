@@ -17,6 +17,7 @@ export const i18n = new VueI18n({
         and: "and",
         ContactWithMe: "Contact with me",
         htmlCoding: "HTML-Coding",
+        fullSite: 'Full site',
         tools: "Tools",
         others: "Others",
         multipage: "multi-page site",
@@ -74,9 +75,16 @@ export const i18n = new VueI18n({
             2: "Therefore, I have few certificates of completion",
             3: "Nevertheless, at the beginning of my journey, I took lessons on",
             4: ", having laid a confident base and received several certificates there.",
-            5: "I can recommend this site to anyone who starts to master web technologies."
+            5: "I can recommend this site to anyone who starts to master web technologies.",
           },
         },
+      },
+      calc: {
+        price: {
+          text: "Estimated cost: from",
+          currency: "$",
+        },
+        desc: "for a more accurate price, you can",
       },
     },
     ru: {
@@ -87,13 +95,14 @@ export const i18n = new VueI18n({
         myContacts: "Мои контакты:",
         and: "и",
         ContactWithMe: "Связаться со мной",
-        htmlCoding: "Верстка",
+        htmlCoding: "Вёрстка",
+        fullSite: 'Сайт "Под ключ"',
         tools: "Инструменты",
         others: "Другое",
         multipage: "многостраничный сайт",
         catalog: "сайт-каталог",
         service: "сайт-сервис",
-        indev: "в разработке",
+        indev: "ещё в разработке",
       },
       header: {
         aboutMe: "Обо мне",
@@ -145,9 +154,16 @@ export const i18n = new VueI18n({
             2: "Поэтому сертификатов о прохождении у меня немного",
             3: "Тем не менее в начале своего пути я проходил уроки на",
             4: ", заложив уверенную базу и получив там несколько сертификатов.",
-            5: "Могу посоветовать данную площадку каждому, кто начинает осваивать веб-технологии."
+            5: "Могу посоветовать данную площадку каждому, кто начинает осваивать веб-технологии.",
           },
         },
+      },
+      calc: {
+        price: {
+          text: "Примерная стоимость: от",
+          currency: "руб.",
+        },
+        desc: "для определения более точной цены вы можете",
       },
     },
   },
