@@ -57,7 +57,7 @@ import workExpertDoors from "@/assets/img/works/expertDoors.png";
 import workInrosFirst from "@/assets/img/works/inrosFirst.png";
 import workRemont24 from "@/assets/img/works/remontgeneratorov.png";
 import sovfinLand from "@/assets/img/works/sovfin.png";
-import RemontP from "@/assets/img/works/RemontP.png";
+import RemontP from "@/assets/img/works/remontP.png";
 
 export default {
   name: "Cases",
