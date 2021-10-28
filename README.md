@@ -24,9 +24,7 @@ yarn lint
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### TODO:
-- Калькуляторы
-- ФОН THREE.JS: проработать фон
-- Доработать сайдбар
-- Сделать preloader
+- Change Three.js bg
+- Add preloader
 
 
