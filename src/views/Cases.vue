@@ -57,6 +57,7 @@ import workExpertDoors from "@/assets/img/works/expertDoors.png";
 import workInrosFirst from "@/assets/img/works/inrosFirst.png";
 import workRemont24 from "@/assets/img/works/remontgeneratorov.png";
 import sovfinLand from "@/assets/img/works/sovfin.png";
+import RemontP from "@/assets/img/works/RemontP.png";
 
 export default {
   name: "Cases",
@@ -64,6 +65,12 @@ export default {
     emptyImg,
     cases: [
       {
+        img: RemontP,
+        name: "Moscow Remont",
+        tags: ["Многостраничный сайт", "WordPress", "JQuery", "SASS", "Gulp"],
+        url: "https://remont-p.com/",
+        ready: true,
+      },{
         img: sovfinLand,
         name: "СОВФИН.РФ",
         tags: ["Лендинг", "SASS", "Gulp"],
@@ -97,13 +104,6 @@ export default {
         tags: ["Многостраничный сайт", "WordPress", "JQuery", "SASS", "Gulp"],
         url: "https://remontgenerator.ru/",
         ready: true,
-      },
-      {
-        img: emptyImg,
-        name: "Moscow Remont",
-        tags: ["Многостраничный сайт", "WordPress", "JQuery", "SASS", "Gulp"],
-        url: "https://remont-p.com/",
-        ready: false,
       },
     ],
   }),
