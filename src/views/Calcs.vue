@@ -72,7 +72,7 @@ export default {
 .calcs.gray-block {
   background: linear-gradient(180deg, #394253 0%, #181c27 147.23%);
   max-width: 1050px;
-  margin: 0 auto;
+  margin: 150px auto;
 }
 .calcs__endprice {
   text-align: center;

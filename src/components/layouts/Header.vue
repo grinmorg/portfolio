@@ -1,5 +1,8 @@
 <template>
-  <header class="header">
+  <header class="header" ref="header">
+    <router-link to="/" class="logo">
+      <VueTextGlitch text="< G />"></VueTextGlitch>
+    </router-link>
     <nav class="nav">
       <ul class="nav__list">
         <li class="nav__item">
@@ -20,19 +23,43 @@
       </ul>
     </nav>
     <div class="lang">
-      <button v-if="$i18n.locale === 'ru'" @click="setLocale('en')"><flag iso="us"></flag></button>
-      <button v-if="$i18n.locale === 'en'" @click="setLocale('ru')"><flag iso="ru"></flag></button>
+      <button v-if="$i18n.locale === 'ru'" @click="setLocale('en')">
+        <flag iso="us"></flag>
+      </button>
+      <button v-if="$i18n.locale === 'en'" @click="setLocale('ru')">
+        <flag iso="ru"></flag>
+      </button>
     </div>
   </header>
 </template>
 
 <script>
+import VueTextGlitch from "vue-text-glitch";
+
 export default {
   name: "Header",
   methods: {
     setLocale(locale) {
       this.$i18n.locale = locale;
     },
+    handleScroll() {
+      if(window.scrollY > 100) {
+        this.$refs.header.classList.add('header--active');
+      } else {
+        this.$refs.header.classList.remove('header--active');
+      }
+    }
+  },
+  components: {
+    VueTextGlitch,
+  },
+  created() {
+    // слушаю скролл
+    window.addEventListener("scroll", this.handleScroll);
+  },
+  destroyed() {
+    // удаляю слушатель скролла
+    window.removeEventListener("scroll", this.handleScroll);
   },
 };
 </script>
@@ -42,16 +69,26 @@ export default {
 
 .header {
   display: flex;
-  width: calc(100% - 300px);
-  background-color: var(--bg-header);
+  align-items: center;
+  width: 100%;
+  background-color: transparent;
   box-shadow: 0 5px 22px rgb(0 0 0 / 25%);
   position: fixed;
   top: 0;
   right: 0;
   z-index: var(--z-header);
+
+  &--active {
+    background: var(--bg-sidebar);
+  }
+
+  #text-glitch.vue-glitch {
+    font-size: 60px;
+  }
 }
 
 .nav {
+  margin: 0 auto;
   &__list {
     display: flex;
   }
@@ -81,7 +118,6 @@ export default {
 }
 
 .lang {
-  margin-left: auto;
   margin-right: 50px;
   display: flex;
   align-items: center;
@@ -89,11 +125,18 @@ export default {
     width: 50px;
     height: 32px;
     span {
-      width: 100%!important;
+      width: 100% !important;
       height: 100%;
       background-size: cover;
     }
   }
+}
+
+.logo {
+  text-align: center;
+  font-weight: 700;
+  font-size: 50px;
+  margin-left: 50px;
 }
 
 @include tablets {

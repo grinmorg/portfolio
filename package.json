@@ -22,6 +22,7 @@
     "vue-select": "^3.16.0",
     "vue-silentbox": "^2.4.5",
     "vue-slick-carousel": "^1.0.6",
+    "vue-text-glitch": "^1.0.1",
     "vue-tilt.js": "^1.1.1",
     "vue-toastification": "^1.7.11",
     "vuex": "^3.4.0"

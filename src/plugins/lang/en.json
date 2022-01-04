@@ -1,0 +1,105 @@
+{
+  "base": {
+    "fullname": "Grigory Morgachev",
+    "work": "Web-developer",
+    "whatDo": "I am engaged in the development of sites. I work as a freelancer.",
+    "myContacts": "My contacts:",
+    "and": "and",
+    "ContactWithMe": "Contact with me",
+    "htmlCoding": "HTML-Coding",
+    "fullSite": "Full site",
+    "tools": "Tools",
+    "others": "Others",
+    "multipage": "multi-page site",
+    "catalog": "site-catalog",
+    "service": "site-service",
+    "indev": "in developing",
+    "hello": {
+      "1": "Hi, I'm Grigory",
+      "2": "And I can make a website for you"
+    }
+  },
+  "header": {
+    "aboutMe": "About me",
+    "portfolio": "Portfolio",
+    "calcs": "Calculates"
+  },
+  "home": {
+    "text": "I am a freelance front-end developer. I am engaged in the creation of sites, primarily on the CMS. I take on sites of varying complexity, such as: ",
+    "textSpans": {
+      "1": "Landing page",
+      "2": "business sites",
+      "3": "corporate sites",
+      "4": "sites catalogs",
+      "5": "ecommerce sites"
+    },
+    "skillsTitle": "What i use",
+    "p": {
+      "htmlCoding": "For CTML coding I use BEM methodology. Use Flexbox and Grid.<br> I understand how to write HTML code for Vue/Nuxt. Automating my work with task-manager Gulp",
+      "tools": {
+        "1": "For quick interface development",
+        "2": "and others.",
+        "3": "To create animations"
+      },
+      "cms": {
+        "1": "I confidently use such CMS as",
+        "2": "Turnkey projects with these CMS you can look at in my"
+      },
+      "others": "I work with Git. I adhere to the BEM methodology in the code. I write clean and valid code."
+    },
+    "howIwork": {
+      "title": "How i work",
+      "p": {
+        "0": "My team has a designer, copywriter and content manager",
+        "1": "We are working through any messenger, on a prepaid basis in 30%.",
+        "2": "But you can",
+        "3": "and offer your terms of cooperation.",
+        "4": "From exchanges I work mainly on"
+      },
+      "span": {
+        "1": "write me"
+      }
+    },
+    "certif": {
+      "title": "Certificates",
+      "p": {
+        "1": "When studying the tools I need, I am mainly guided by the official documentation and do not purchase paid courses.",
+        "2": "Therefore, I have few certificates of completion",
+        "3": "Nevertheless, at the beginning of my journey, I took lessons on",
+        "4": ", having laid a confident base and received several certificates there.",
+        "5": "I can recommend this site to anyone who starts to master web technologies."
+      }
+    }
+  },
+  "calc": {
+    "tabs": {
+      "first": {
+        "1": "How many pages",
+        "2": "Needed adaptation",
+        "3": "How many blocks on page",
+        "4": "Easy animations",
+        "5": "JS-scripts",
+        "6": "Hard animations",
+        "popups": {
+          "1": "You will lose a lot of traffic. Since most users will use phones to browse your site!",
+          "2": "This option is mandatory, since the \"Hard animation \" option is selected"
+        },
+        "tooltips": {
+          "1": "Specify the number of pages for layout",
+          "2": "Adaptation is needed for the normal display of your site on all devices, from phone to PC",
+          "3": "If the number of blocks on the pages is different - indicate the average value",
+          "4": "This animation will make your site more enjoyable for the user. The blocks will fade in as you scroll. Dynamic elements will also be animated when interacting with the user.",
+          "5": "Simple scripts like burger menu, sliders, etc. are already included in the cost of work. \"Complex JS scripts \" means scripts that implement more complex functionality, such as quizzes, calculators, mini-games, etc. ",
+          "6": "An example of such an animation is the background on home page, which is animated 3d objects. Attention! If you select this item, then the \"Complex JS scripts \" option should also be selected"
+        },
+        "second": {}
+      }
+    },
+    "price": {
+      "text": "Estimated cost: from",
+      "currency": "$"
+    },
+    "desc": "for a more accurate price, you can",
+    "select": "Chose the one"
+  }
+}

@@ -1,69 +1,59 @@
 <template>
-  <div class="container">
-    <div class="gray-block">
-      <h1 class="title">{{ $t("home.title") }}</h1>
-      <p class="text mt-20">
-        <strong v-html="$t('home.text')"></strong>
-        <span>{{ $t("home.textSpans.1") }}</span
-        >, <span>{{ $t("home.textSpans.2") }}</span
-        >,<span> {{ $t("home.textSpans.3") }}</span
-        >, <span>{{ $t("home.textSpans.4") }}</span> {{ $t("base.and") }}
-        <span>{{ $t("home.textSpans.5") }}</span
-        >.
-      </p>
-      <h2 class="subtitle mt-20">{{ $t("home.skillsTitle") }}:</h2>
-      <p class="text mt-20">
-        <span>{{ $t("base.htmlCoding") }}:</span><br />
-        <strong v-html="$t('home.p.htmlCoding')"></strong>
-      </p>
-      <p class="text mt-20">
-        <span>{{ $t("base.tools") }}:</span><br />
-        {{ $t("home.p.tools.1") }}: <span>Bootstrap</span>,
-        <span>Material-UI</span>, <span>Vuetify</span>
-        {{ $t("home.p.tools.2") }} <br />
-        {{ $t("home.p.tools.3") }}: <span>Three.js</span>, <span>GSAP</span>,
-        <span>WOW.js</span>
-      </p>
-      <p class="text mt-20">
-        <span>CMS:</span><br />
-        {{ $t("home.p.cms.1") }} <span>WordPress</span> и
-        <span>Modx Revo</span>. <br />{{ $t("home.p.cms.2") }}
-        <router-link to="/cases">{{ $t("header.portfolio") }}</router-link>
-      </p>
-      <p class="text mt-20">
-        <span>{{ $t("base.others") }}:</span><br />
-        {{ $t("home.p.others") }}
-      </p>
-    </div>
-    <div class="gray-block mt-20">
-      <h2 class="subtitle">{{ $t("home.howIwork.title") }}:</h2>
-      <p class="text mt-20">
-        {{ $t("home.howIwork.p.1") }} <br />
-        {{ $t("home.howIwork.p.2")
-        }}<button @click="$emit('openPopupCallback')">
-          {{ $t("home.howIwork.span.1") }}
-        </button>
-        {{ $t("home.howIwork.p.3") }} <br />{{ $t("home.howIwork.p.4") }}
-        <a href="https://kwork.ru/user/gr1nmorg" target="_blank">Kwork</a>
-        <!--  и
+  <div class="page-home">
+    <HeroSection />
+    <div class="container">
+      <div class="page-home__preview">
+        <p class="text mt-20">
+          <strong v-html="$t('home.text')"></strong>
+          <span>{{ $t("home.textSpans.1") }}</span
+          >, <span>{{ $t("home.textSpans.2") }}</span
+          >,<span> {{ $t("home.textSpans.3") }}</span
+          >, <span>{{ $t("home.textSpans.4") }}</span> {{ $t("base.and") }}
+          <span>{{ $t("home.textSpans.5") }}</span
+          >.
+        </p>
+      </div>
+      <div class="gray-block">
+        <h2 class="subtitle mt-20">{{ $t("home.skillsTitle") }}:</h2>
+        <p class="text mt-20">
+          <span>{{ $t("base.htmlCoding") }}:</span><br />
+          <strong v-html="$t('home.p.htmlCoding')"></strong>
+        </p>
+        <p class="text mt-20">
+          <span>{{ $t("base.tools") }}:</span><br />
+          {{ $t("home.p.tools.1") }}: <span>Bootstrap</span>,
+          <span>Material-UI</span>, <span>Vuetify</span>
+          {{ $t("home.p.tools.2") }} <br />
+          {{ $t("home.p.tools.3") }}: <span>Three.js</span>, <span>GSAP</span>,
+          <span>WOW.js</span>
+        </p>
+        <p class="text mt-20">
+          <span>CMS:</span><br />
+          {{ $t("home.p.cms.1") }} <span>WordPress</span> и
+          <span>Modx Revo</span>. <br />{{ $t("home.p.cms.2") }}
+          <router-link to="/cases">{{ $t("header.portfolio") }}</router-link>
+        </p>
+        <p class="text mt-20">
+          <span>{{ $t("base.others") }}:</span><br />
+          {{ $t("home.p.others") }}
+        </p>
+      </div>
+      <div class="gray-block mt-20">
+        <h2 class="subtitle">{{ $t("home.howIwork.title") }}:</h2>
+        <p class="text mt-20">
+          {{ $t("home.howIwork.p.0") }} <br />
+          {{ $t("home.howIwork.p.1") }} <br />
+          {{ $t("home.howIwork.p.2")
+          }}<button @click="$emit('openPopupCallback')">
+            {{ $t("home.howIwork.span.1") }}
+          </button>
+          {{ $t("home.howIwork.p.3") }} <br />{{ $t("home.howIwork.p.4") }}
+          <a href="https://kwork.ru/user/gr1nmorg" target="_blank">Kwork</a>
+          <!--  и
         <a href="https://www.weblancer.net/users/GrinMorg/" target="_blank"
           >Weblancer</a
         > -->
-      </p>
-    </div>
-    <div class="gray-block mt-20">
-      <h2 class="subtitle text-align-center">{{ $t("home.certif.title") }}:</h2>
-      <p class="text mt-20 text-align-center">
-        {{ $t("home.certif.p.1") }}<br />
-        {{ $t("home.certif.p.2") }} 😃<br />
-        {{ $t("home.certif.p.3") }}
-        <a href="https://www.freecodecamp.org/grinmorg" target="_blank"
-          >FREECODECAMP</a
-        >{{ $t("home.certif.p.4") }}<br />
-        {{ $t("home.certif.p.5") }}
-      </p>
-      <div class="serificates">
-        <silent-box :gallery="gallery"></silent-box>
+        </p>
       </div>
     </div>
   </div>
@@ -101,15 +91,29 @@ export default {
     ],
     markdown: "# Hello World",
   }),
-  components: {},
-  computed: {
-    
+  components: {
+    HeroSection: () => import("@/components/blocks/HeroSection"),
   },
+  computed: {},
 };
 </script>
 
 <style lang="scss">
 @import "@/assets/scss/mixins";
+
+.page-home {
+  padding-bottom: 80px;
+  &__preview {
+    padding: min(5vh, 60px) 0;
+    .text {
+      font-size: 32px;
+      line-height: 32px;
+      text-align: center;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+  }
+}
 
 .text {
   a {

@@ -2,23 +2,21 @@
   <div id="app">
     <Preloader />
     <Header />
-    <Sidebar
+    <!-- <Sidebar
       :showSideBar="showSideBar"
       @openPopupCallback="openPopupCallback"
-    />
-    <div
+    /> -->
+    <!-- <div
       class="show-sidebar"
       :class="{
         active: !showSideBar,
       }"
       @click="showSideBar = !showSideBar"
       title="Показать сайдбар"
-    ></div>
+    ></div> -->
     <main class="main">
       <router-view @openPopupCallback="openPopupCallback" />
     </main>
-    <three-bg />
-
     <callback-popup :open="isOpenCallbackPopup" @close="closePopupCallback" />
   </div>
 </template>
@@ -29,8 +27,7 @@ export default {
   components: {
     Preloader: () => import("@/components/layouts/Preloader"),
     Header: () => import("@/components/layouts/Header"),
-    Sidebar: () => import("@/components/layouts/Sidebar"),
-    ThreeBg: () => import("@/components/layouts/ThreeBg"),
+    // Sidebar: () => import("@/components/layouts/Sidebar"),
     CallbackPopup: () => import("@/components/popups/CallbackPopup"),
   },
   data: () => ({
@@ -66,7 +63,7 @@ html {
 }
 
 body {
-  background: var(--bg-body);
+  background: var(--bg-sidebar-header);
   color: var(--white);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
@@ -74,13 +71,19 @@ body {
   line-height: 1.5;
 }
 
-.main {
-  padding-top: 10rem;
-  padding-left: 300px;
-}
-
 .show-sidebar {
   display: none;
+}
+
+#text-glitch.vue-glitch {
+  &:before, 
+  &:after {
+    background: transparent!important;
+    color: var(--white)!important;
+    color: var(--white)!important;
+  }
+
+  color: var(--white)!important;
 }
 
 @include tablets {

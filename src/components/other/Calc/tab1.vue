@@ -7,16 +7,16 @@
           :anchor-el="$refs.popperCountPage"
           placement="top"
         >
-          <div id="popper-content">Укажите количество страниц для вёрстки</div>
+          <div id="popper-content">{{ $t("calc.tabs.first.tooltips.1") }}</div>
         </Popper>
         <label
           ref="popperCountPage"
           @mouseover="showPopper('boolPopperCountPage')"
           @mouseleave="hidePopper('boolPopperCountPage')"
           class="calc-item__title"
-          >Количество страниц:</label
+          >{{ $t("calc.tabs.first.1") }}:</label
         >
-        <v-select v-model="selectedCountPage" :options="CountPage"> </v-select>
+        <v-select v-model="placeholderSelect" :options="CountPage"> </v-select>
       </div>
       <div class="calc-item calc-item--checkbox">
         <Popper
@@ -25,8 +25,7 @@
           placement="top"
         >
           <div id="popper-content">
-            Адаптация нужна для нормального отображения вашего сайта на всех
-            устройствах, от телефона до ПК
+            {{ $t("calc.tabs.first.tooltips.2") }}
           </div>
         </Popper>
         <input type="checkbox" v-model="boolAdaptiv" id="html_coding_2" />
@@ -36,7 +35,7 @@
           @mouseleave="hidePopper('boolPopperAdaptiv')"
           for="html_coding_2"
           class="calc-item__title"
-          >Нужна ли адаптация:
+          >{{ $t("calc.tabs.first.2") }}:
           <em class="toogle"></em>
         </label>
       </div>
@@ -49,8 +48,7 @@
           placement="top"
         >
           <div id="popper-content">
-            Если количество блоков на страницах разное - укажите среднее
-            значение
+            {{ $t("calc.tabs.first.tooltips.3") }}
           </div>
         </Popper>
         <label
@@ -58,9 +56,9 @@
           @mouseover="showPopper('boolPopperCountBlocks')"
           @mouseleave="hidePopper('boolPopperCountBlocks')"
           class="calc-item__title"
-          >Количество блоков на странице:</label
+          >{{ $t("calc.tabs.first.3") }}:</label
         >
-        <v-select v-model="selectedCountBlocks" :options="CountBlocks">
+        <v-select v-model="placeholderSelect" :options="CountBlocks">
         </v-select>
       </div>
       <div class="calc-item calc-item--checkbox">
@@ -70,9 +68,7 @@
           placement="top"
         >
           <div id="popper-content">
-            Такая анимация сделает ваш сайт более приятным для пользователя.
-            Блоки будут плавно появлятся при скролее. Динамические элементы так
-            же будут анимированы при взаимодейсвии с пользователем
+            {{ $t("calc.tabs.first.tooltips.4") }}
           </div>
         </Popper>
         <input type="checkbox" v-model="boolLightAnimate" id="html_coding_3" />
@@ -82,7 +78,7 @@
           @mouseleave="hidePopper('boolPopperLightAnimate')"
           for="html_coding_3"
           class="calc-item__title"
-          >Легкая анимация (CSS/JS):
+          >{{ $t("calc.tabs.first.4") }} (CSS/JS):
           <em class="toogle"></em>
         </label>
       </div>
@@ -95,10 +91,7 @@
           placement="top"
         >
           <div id="popper-content">
-            Простые скрипты типо бургер-меню, слайдеров и тп. уже входят в
-            стоимость работ. Под "Сложными JS-скриптами" подразумеваются скрипты
-            реализующие более сложный функционал, например квизы, калькуляторы,
-            мини-игры и тп.
+            {{ $t("calc.tabs.first.tooltips.5") }}
           </div>
         </Popper>
         <input type="checkbox" v-model="boolScripts" id="html_coding_4" />
@@ -108,7 +101,7 @@
           @mouseleave="hidePopper('boolPopperScripts')"
           for="html_coding_4"
           class="calc-item__title"
-          >Сложные JS-скрипты:
+          >{{ $t("calc.tabs.first.5") }}:
           <em class="toogle"></em>
         </label>
       </div>
@@ -119,10 +112,7 @@
           placement="top"
         >
           <div id="popper-content">
-            Пример такой анимации - задний фон на этом сайте, который
-            представляет из себя анимированные 3d объекты.
-            <span class="green-text">Внимание!</span> Если вы выбираете данный
-            пункт, то опция "Сложные JS-скрипты" должна быть так же выбрана
+            {{ $t("calc.tabs.first.tooltips.6") }}
           </div>
         </Popper>
         <input type="checkbox" v-model="boolHardAnimate" id="html_coding_5" />
@@ -133,7 +123,7 @@
           for="html_coding_5"
           class="calc-item__title"
         >
-          Тяжелая JS-анимация:
+          {{ $t("calc.tabs.first.6") }}:
           <em class="toogle"></em>
         </label>
       </div>
@@ -147,9 +137,7 @@ import { mapActions } from "vuex";
 export default {
   data: () => ({
     CountPage: ["Лендинг", "1 - 3", "3 - 6", "6 - 10", "10 - 15", "более 15"],
-    selectedCountPage: "Выбирайте нужный пункт в выпадающем списке",
     CountBlocks: ["1 - 5", "5 - 10", "10 - 15", "более 15"],
-    selectedCountBlocks: "Выбирайте нужный пункт в выпадающем списке",
     boolAdaptiv: true,
     boolLightAnimate: false,
     boolScripts: false,
@@ -248,21 +236,19 @@ export default {
     boolAdaptiv(val) {
       if (!val) {
         this.$toast.warning(
-          "Вы потеряете большое кол-во трафика. Так как большинство пользователей будут использовать телефоны для просмотра вашего сайта!",
-          {
-            position: "top-right",
-            timeout: 10000,
-            closeOnClick: true,
-            pauseOnFocusLoss: true,
-            pauseOnHover: true,
-            draggable: true,
-            draggablePercent: 0.6,
-            showCloseButtonOnHover: false,
-            closeButton: "button",
-            icon: true,
-            rtl: false,
-          }
-        );
+          this.$t("calc.tabs.first.popups.1"), {
+          position: "top-right",
+          timeout: 10000,
+          closeOnClick: true,
+          pauseOnFocusLoss: true,
+          pauseOnHover: true,
+          draggable: true,
+          draggablePercent: 0.6,
+          showCloseButtonOnHover: false,
+          closeButton: "button",
+          icon: true,
+          rtl: false,
+        });
       }
       this.totalPrice();
     },
@@ -273,7 +259,7 @@ export default {
       if (this.boolHardAnimate) {
         if (!val) {
           this.$toast.warning(
-            'Данная опция является обязатеьной, так как выбрана опция "Тяжелая анимация" ',
+            this.$t("calc.tabs.first.popups.2"),
             {
               position: "top-right",
               timeout: 3000,
@@ -306,6 +292,11 @@ export default {
       this.totalPrice();
     },
   },
+  computed: {
+    placeholderSelect() {
+      return this.$t("calc.select")
+    },
+  }
 };
 </script>
 

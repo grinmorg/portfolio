@@ -114,6 +114,7 @@ export default {
 @import "@/assets/scss/mixins";
 
 .cases {
+  margin-top: 150px;
   overflow: hidden;
   padding-bottom: 50px;
   &__list {

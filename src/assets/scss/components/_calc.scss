@@ -45,6 +45,7 @@
                 margin-top: 10px;
              
                 .toogle {
+                    margin-top: 1rem;
                     margin-left: 1rem;
                     display: block;
                     width: 5rem;
@@ -52,7 +53,7 @@
                     background: #303746;
                     mix-blend-mode: normal;
                     border: 2px solid #333b4a;
-                    box-shadow: -8px -8px 20px rgba(72, 80, 94, 0.45), 8px 8px 20px rgba(24, 28, 39, 0.45),
+                    box-shadow: 4px 4px 20px rgba(72, 80, 94, 0.45), 8px 8px 20px rgba(24, 28, 39, 0.45),
                         inset -8px -8px 10px #2d3547, inset 8px 8px 10px #2b3240;
                     border-radius: 50px;
                     position: relative;
@@ -92,6 +93,7 @@
                 }
             }
             .v-select {
+                margin-top: 1rem;
                 cursor: pointer;
             }
             .vs__selected {
