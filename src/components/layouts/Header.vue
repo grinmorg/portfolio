@@ -140,15 +140,19 @@ export default {
 }
 
 @include tablets {
+  .logo {
+    display: none;
+  }
   .header {
     width: 100%;
   }
 }
 
 @include phones {
+  
   .nav {
     &__link {
-      font-size: 1.3rem;
+      font-size: 1.2rem;
     }
   }
 }
