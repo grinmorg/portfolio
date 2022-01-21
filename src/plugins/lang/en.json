@@ -15,14 +15,15 @@
     "service": "site-service",
     "indev": "in developing",
     "hello": {
-      "1": "Hi, I'm Grigory",
-      "2": "And I can make a website for you"
+      "1": "Hi",
+      "2": "Need website?"
     }
   },
   "header": {
     "aboutMe": "About me",
     "portfolio": "Portfolio",
-    "calcs": "Calculates"
+    "calcs": "Calculates",
+    "contacts": "Contacts"
   },
   "home": {
     "text": "I am a freelance front-end developer. I am engaged in the creation of sites, primarily on the CMS. I take on sites of varying complexity, such as: ",
@@ -35,17 +36,18 @@
     },
     "skillsTitle": "What i use",
     "p": {
-      "htmlCoding": "For CTML coding I use BEM methodology. Use Flexbox and Grid.<br> I understand how to write HTML code for Vue/Nuxt. Automating my work with task-manager Gulp",
+      "htmlCoding": "For HTML coding I use <span>BEM</span> methodology. Use <span>Flexbox</span> and <span>Grid</span>.<br> I understand how to write HTML code for <span>Vue/Nuxt</span>. Automating my work with task-manager <span>Gulp</span>",
       "tools": {
         "1": "For quick interface development",
         "2": "and others.",
         "3": "To create animations"
       },
       "cms": {
-        "1": "I confidently use such CMS as",
+        "1": "I confidently use",
+        "1-1": "Often use",
         "2": "Turnkey projects with these CMS you can look at in my"
       },
-      "others": "I work with Git. I adhere to the BEM methodology in the code. I write clean and valid code."
+      "others": "I work with Git. I write clean and valid code."
     },
     "howIwork": {
       "title": "How i work",

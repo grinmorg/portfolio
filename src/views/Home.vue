@@ -29,8 +29,7 @@
         </p>
         <p class="text mt-20">
           <span>CMS:</span><br />
-          {{ $t("home.p.cms.1") }} <span>WordPress</span> и
-          <span>Modx Revo</span>. <br />{{ $t("home.p.cms.2") }}
+          {{ $t("home.p.cms.1") }} <span>WordPress</span>. {{ $t("home.p.cms.1-1") }} <span>WooCommerce</span><br />{{ $t("home.p.cms.2") }}
           <router-link to="/cases">{{ $t("header.portfolio") }}</router-link>
         </p>
         <p class="text mt-20">
@@ -41,18 +40,14 @@
       <div class="gray-block mt-20">
         <h2 class="subtitle">{{ $t("home.howIwork.title") }}:</h2>
         <p class="text mt-20">
-          {{ $t("home.howIwork.p.0") }} <br />
           {{ $t("home.howIwork.p.1") }} <br />
           {{ $t("home.howIwork.p.2")
           }}<button @click="$emit('openPopupCallback')">
             {{ $t("home.howIwork.span.1") }}
           </button>
           {{ $t("home.howIwork.p.3") }} <br />{{ $t("home.howIwork.p.4") }}
-          <a href="https://kwork.ru/user/gr1nmorg" target="_blank">Kwork</a>
-          <!--  и
-        <a href="https://www.weblancer.net/users/GrinMorg/" target="_blank"
-          >Weblancer</a
-        > -->
+          <a href="https://kwork.ru/user/gr1nmorg" target="_blank">Kwork</a><br />
+          {{ $t("home.howIwork.p.0") }}
         </p>
       </div>
     </div>

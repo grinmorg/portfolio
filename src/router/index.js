@@ -21,6 +21,12 @@ const routes = [
     component: () => import("@/views/Calcs.vue"),
     meta: { title: "Calculate price | GM" },
   },
+  {
+    path: "/contacts",
+    name: "Contacts",
+    component: () => import("@/views/Contacts.vue"),
+    meta: { title: "Contacts | GM" },
+  },
 ];
 
 const router = new VueRouter({

@@ -1,0 +1,31 @@
+.contacts {
+
+  .container {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__box {
+    padding: 1rem 4rem;
+    border-radius: .3rem;
+    max-width: 600px;
+    margin: 0 auto;
+    background: var(--bg-case--light);
+  }
+
+  &-list {
+    &__item {
+      text-align: center;
+      font-size: 24px;
+      span {
+        display: block;
+      }
+    }
+  }
+
+  &__link {
+    color: var(--green--light);
+  }
+}

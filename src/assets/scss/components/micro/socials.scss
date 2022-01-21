@@ -1,0 +1,25 @@
+.socials {
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  &__link {
+    width: 50px;
+    svg {
+      max-width: 50px;
+      path {
+        fill: var(--green);
+      }
+    }
+
+    &:hover,
+    &:focus {
+      svg {
+        path {
+          fill: var(--green--light);
+        }
+      }
+    }
+  }
+} 

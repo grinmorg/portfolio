@@ -20,6 +20,11 @@
             {{ $t("header.calcs") }}
           </router-link>
         </li>
+        <li class="nav__item">
+          <router-link class="nav__link" to="/contacts">
+            {{ $t("header.contacts") }}
+          </router-link>
+        </li>
       </ul>
     </nav>
     <div class="lang">

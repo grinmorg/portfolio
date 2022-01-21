@@ -25,6 +25,7 @@ const options = {
   newestOnTop: true,
 };
 
+
 // Дефолтный тайтл
 const DEFAULT_TITLE = "Personal Portfolio | GM";
 router.afterEach((to) => {

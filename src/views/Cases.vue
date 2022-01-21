@@ -75,7 +75,7 @@ export default {
         name: "СОВФИН.РФ",
         tags: ["Лендинг", "SASS", "Gulp"],
         url: "https://xn--b1ampbou.xn--p1ai/",
-        ready: false,
+        ready: true,
       },
       {
         img: workVzamke24,
