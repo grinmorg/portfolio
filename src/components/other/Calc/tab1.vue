@@ -16,7 +16,7 @@
           class="calc-item__title"
           >{{ $t("calc.tabs.first.1") }}:</label
         >
-        <v-select v-model="placeholderSelect" :options="CountPage"> </v-select>
+        <v-select :placeholder="placeholderSelect" v-model="selectedCountPage" :options="CountPage"> </v-select>
       </div>
       <div class="calc-item calc-item--checkbox">
         <Popper
@@ -58,7 +58,7 @@
           class="calc-item__title"
           >{{ $t("calc.tabs.first.3") }}:</label
         >
-        <v-select v-model="placeholderSelect" :options="CountBlocks">
+        <v-select :placeholder="placeholderSelect" v-model="selectedCountBlocks" :options="CountBlocks">
         </v-select>
       </div>
       <div class="calc-item calc-item--checkbox">
@@ -137,7 +137,9 @@ import { mapActions } from "vuex";
 export default {
   data: () => ({
     CountPage: ["Лендинг", "1 - 3", "3 - 6", "6 - 10", "10 - 15", "более 15"],
+    selectedCountPage: '',
     CountBlocks: ["1 - 5", "5 - 10", "10 - 15", "более 15"],
+    selectedCountBlocks: '',
     boolAdaptiv: true,
     boolLightAnimate: false,
     boolScripts: false,
@@ -294,7 +296,7 @@ export default {
   },
   computed: {
     placeholderSelect() {
-      return this.$t("calc.select")
+      return this.$t("calc.select");
     },
   }
 };
