@@ -13,6 +13,10 @@
 
 .subtitle {
     font-size: 3rem;
+
+    @include phones {
+        font-size: 2.2rem;
+    }
 }
 
 .text {
@@ -28,6 +32,10 @@
     }
     &-align-center {
         text-align: center !important;
+    }
+
+    @include phones {
+        font-size: 1.4rem;
     }
 }
 

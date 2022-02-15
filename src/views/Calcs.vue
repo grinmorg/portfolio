@@ -92,7 +92,7 @@ export default {
 
 @media screen and (max-width: 1050px) {
   .calcs.gray-block {
-    margin: 0 10px;
+    margin: 100px 10px;
   }
 }
 </style>

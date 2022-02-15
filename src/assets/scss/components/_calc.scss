@@ -114,4 +114,10 @@
             }
         }
     }
+
+    @include phones {
+        &__block {
+            flex-direction: column;
+        }
+    }
 }

@@ -58,6 +58,7 @@ import workInrosFirst from "@/assets/img/works/inrosFirst.png";
 import workRemont24 from "@/assets/img/works/remontgeneratorov.png";
 import sovfinLand from "@/assets/img/works/sovfin.png";
 import RemontP from "@/assets/img/works/remontP.png";
+import IT159 from "@/assets/img/works/it159.png";
 
 export default {
   name: "Cases",
@@ -65,6 +66,12 @@ export default {
     emptyImg,
     cases: [
       {
+        img: IT159,
+        name: "IT 159",
+        tags: ["Интернет-магазин", "WordPress", "WooCommerce", "JQuery", "SASS", "Gulp"],
+        url: "https://it.159.ru/",
+        ready: true,
+      },{
         img: RemontP,
         name: "Moscow Remont",
         tags: ["Многостраничный сайт", "WordPress", "JQuery", "SASS", "Gulp"],
@@ -192,6 +199,21 @@ export default {
 @include tablets {
   .title {
     text-align: center;
+  }
+}
+
+@include phones {
+  .cases {
+    &__list {
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+  }
+  .case {
+    &__img {
+      img {
+        object-position: left;
+      }
+    }
   }
 }
 </style>

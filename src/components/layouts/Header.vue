@@ -1,27 +1,30 @@
 <template>
   <header class="header" ref="header">
+    <div class="header__burger" :class="{ active: activeMobileNav }" @click="addActiveClassMobileNav">
+      <span></span>
+    </div>
     <router-link to="/" class="logo">
       <VueTextGlitch text="< G />"></VueTextGlitch>
     </router-link>
-    <nav class="nav">
+    <nav class="nav" :class="{ active: activeMobileNav }">
       <ul class="nav__list">
         <li class="nav__item">
-          <router-link class="nav__link" to="/">
+          <router-link class="nav__link" to="/" @click.native="closeMobileNav">
             {{ $t("header.aboutMe") }}
           </router-link>
         </li>
         <li class="nav__item">
-          <router-link class="nav__link" to="/cases">
+          <router-link class="nav__link" to="/cases" @click.native="closeMobileNav">
             {{ $t("header.portfolio") }}
           </router-link>
         </li>
         <li class="nav__item">
-          <router-link class="nav__link" to="/calcs">
+          <router-link class="nav__link" to="/calcs" @click.native="closeMobileNav">
             {{ $t("header.calcs") }}
           </router-link>
         </li>
         <li class="nav__item">
-          <router-link class="nav__link" to="/contacts">
+          <router-link class="nav__link" to="/contacts" @click.native="closeMobileNav">
             {{ $t("header.contacts") }}
           </router-link>
         </li>
@@ -43,17 +46,27 @@ import VueTextGlitch from "vue-text-glitch";
 
 export default {
   name: "Header",
+  data: () => ({
+    activeMobileNav: false
+  }),
   methods: {
     setLocale(locale) {
       this.$i18n.locale = locale;
     },
     handleScroll() {
-      if(window.scrollY > 100) {
-        this.$refs.header.classList.add('header--active');
+      if (window.scrollY > 100) {
+        this.$refs.header.classList.add("header--active");
       } else {
-        this.$refs.header.classList.remove('header--active');
+        this.$refs.header.classList.remove("header--active");
       }
+    },
+    addActiveClassMobileNav() {
+      this.activeMobileNav = !this.activeMobileNav;
+    },
+    closeMobileNav() {
+      this.activeMobileNav = false;
     }
+    
   },
   components: {
     VueTextGlitch,
@@ -82,6 +95,10 @@ export default {
   top: 0;
   right: 0;
   z-index: var(--z-header);
+
+  &__burger {
+    display: none;
+  }
 
   &--active {
     background: var(--bg-sidebar);
@@ -154,11 +171,92 @@ export default {
 }
 
 @include phones {
-  
+  .logo {
+    margin-left: 0;
+    display: block;
+    #text-glitch.vue-glitch {
+      font-size: 30px;
+    }
+  }
+  .header {
+    justify-content: space-between;
+    &__burger {
+      z-index: 999;
+      margin-left: 20px;
+      width: 30px;
+      height: 24px;
+      display: block;
+
+      position: relative;
+      &::before,
+      &::after,
+      span {
+        content: "";
+        position: absolute;
+        height: 4px;
+        background-color: var(--white--light);
+        width: 100%;
+        transition: 0.1s linear;
+      }
+      &::before {
+        top: 0;
+      }
+      &::after {
+        bottom: 0;
+      }
+
+      span {
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      &.active {
+        span {
+          display: none;
+        }
+
+        &::before {
+          top: auto;
+          bottom: 50%;
+          transform: translateY(-50%) rotate(45deg);
+        }
+        &::after {
+          bottom: 50%;
+          transform: translateY(-50%) rotate(-45deg);
+        }
+      }
+    }
+  }
   .nav {
+    display: none;
     &__link {
       font-size: 1.2rem;
     }
+
+    &.active {
+      z-index: 99;
+      display: flex;
+      align-self: center;
+      justify-content: center;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--neu-bg-gd);
+
+      .nav__list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+
+  .lang {
+    z-index: 999;
+    margin-right: 20px;
   }
 }
 </style>

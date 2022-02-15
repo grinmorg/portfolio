@@ -216,6 +216,14 @@ export default {
 }
 
 @include phones {
+  .page-home {
+  &__preview {
+    .text {
+      font-size: 22px;
+      line-height: 28px;
+    }
+  }
+}
   .serificates {
     #silentbox-gallery {
       flex-direction: column;
