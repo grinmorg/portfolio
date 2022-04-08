@@ -18,11 +18,11 @@
             {{ $t("header.portfolio") }}
           </router-link>
         </li>
-        <li class="nav__item">
+        <!-- <li class="nav__item">
           <router-link class="nav__link" to="/calcs" @click.native="closeMobileNav">
             {{ $t("header.calcs") }}
           </router-link>
-        </li>
+        </li> -->
         <li class="nav__item">
           <router-link class="nav__link" to="/contacts" @click.native="closeMobileNav">
             {{ $t("header.contacts") }}
