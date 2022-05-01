@@ -6,8 +6,8 @@
         <ul class="contacts-list">
           <li class="contacts-list__item">
             <span>Почта:</span>
-            <a href="mailto:grinmorg@gmail" class="contacts__link"
-              >grinmorg@gmail</a
+            <a href="mailto:grinmorg@gmail.com" class="contacts__link"
+              >grinmorg@gmail.com</a
             >
           </li>
         </ul>
