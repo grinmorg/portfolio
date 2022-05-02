@@ -24,7 +24,8 @@
             <div v-else class="case__preview">
               <span>{{ item.name }}</span>
             </div>
-            <p class="case__desc">{{ item.name }}</p>
+            <p class="case__name" v-if="item.name">{{ item.name }}</p>
+            <p class="case__desc" v-if="item.desc">{{ item.desc }}</p>
             <ul class="tags">
               <li
                 class="tags__item"
@@ -59,6 +60,7 @@ import workRemont24 from "@/assets/img/works/remontgeneratorov.png";
 import sovfinLand from "@/assets/img/works/sovfin.png";
 import RemontP from "@/assets/img/works/remontP.png";
 import IT159 from "@/assets/img/works/it159.png";
+import DetailingRoom from "@/assets/img/works/DetailingRoom.png";
 
 export default {
   name: "Cases",
@@ -66,20 +68,54 @@ export default {
     emptyImg,
     cases: [
       {
+        img: DetailingRoom,
+        name: "Detailing Room",
+        desc: "Небольшой сайт для автомобильного детейлинга, выполненый в темных тонах. На сайте релизована различная анимацию, например при скролле до блоков и при открытии/закрытии модальных окон",
+        tags: [
+          "Многостраничный сайт",
+          "WordPress",
+          "SASS",
+          "Gulp",
+          "ScrollReveal",
+        ],
+        url: "https://detailing-rooms.ru/",
+        ready: true,
+      },
+      {
         img: IT159,
         name: "IT 159",
-        tags: ["Интернет-магазин", "WordPress", "WooCommerce", "JQuery", "SASS", "Gulp"],
+        desc: "Интернет-магазин для провайдера интеренета. Реализован функционал коризны и оформления заказа с онлайн-оплатой",
+        tags: [
+          "Интернет-магазин",
+          "WordPress",
+          "WooCommerce",
+          "JQuery",
+          "SASS",
+          "Gulp",
+        ],
         url: "https://it.159.ru/",
         ready: true,
-      },{
+      },
+      {
+        img: workExpertDoors,
+        name: "Expert Doors",
+        desc: "Большой многостраничный сайт-каталог для производителя дверей. На сайте большое кол-во товара, поэтому реализован удобный фильтр на странице каталога",
+        tags: ["Сайт-каталог", "WordPress", "JQuery", "SASS", "Gulp"],
+        url: "https://expert-doors.ru/",
+        ready: true,
+      },
+      {
         img: RemontP,
         name: "Moscow Remont",
-        tags: ["Многостраничный сайт", "WordPress", "JQuery", "SASS", "Gulp"],
+        desc: "Лендинг для компании предоставляющей услуги по ремонту и отделки квартир в Москве. Для увеления конверсии на сайт было решено внедрить квиз с динамической настройкой вопросов из админ-панели.",
+        tags: ["Лендинг", "WordPress", "JQuery", "SASS", "Gulp"],
         url: "https://remont-p.com/",
         ready: true,
-      },{
+      },
+      {
         img: sovfinLand,
         name: "СОВФИН.РФ",
+        desc: "Лендинг для компании предоставляющей цифровые услуги в сфере IT",
         tags: ["Лендинг", "SASS", "Gulp"],
         url: "https://xn--b1ampbou.xn--p1ai/",
         ready: true,
@@ -89,13 +125,6 @@ export default {
         name: "VZAMKE24",
         tags: ["Многостраничный сайт", "WordPress", "JQuery", "SASS", "Gulp"],
         url: "https://vzamke24.ru/",
-        ready: true,
-      },
-      {
-        img: workExpertDoors,
-        name: "Expert Doors",
-        tags: ["Сайт-каталог", "WordPress", "JQuery", "SASS", "Gulp"],
-        url: "https://expert-doors.ru/",
         ready: true,
       },
       {
@@ -126,15 +155,13 @@ export default {
   padding-bottom: 50px;
   &__list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    grid-auto-rows: 50px;
-    grid-auto-flow: dense;
+    grid-template-columns: repeat(2, 1fr);
     gap: 25px;
   }
 }
 
 .case {
-  max-width: 520px;
+  width: 100%;
   margin: 3rem auto 0;
   background: var(--bg-case--light);
   border-radius: 25px;
@@ -145,12 +172,19 @@ export default {
   position: relative;
   overflow: hidden;
 
-  &__desc {
+  &__name {
     font-size: 2rem;
     padding: 1rem;
     text-transform: uppercase;
     text-align: center;
   }
+
+  &__desc {
+    padding-left: 1rem;
+    font-size: 1.6rem;
+    color: var(--neu-text);
+  }
+
   &__link {
     width: 100%;
     color: var(--white);

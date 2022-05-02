@@ -2,6 +2,7 @@
   <div id="app">
     <Preloader />
     <Header />
+    <ThreeBg />
     <!-- <Sidebar
       :showSideBar="showSideBar"
       @openPopupCallback="openPopupCallback"
@@ -29,6 +30,8 @@ export default {
     Header: () => import("@/components/layouts/Header"),
     // Sidebar: () => import("@/components/layouts/Sidebar"),
     CallbackPopup: () => import("@/components/popups/CallbackPopup"),
+    ThreeBg: () => import("@/components/layouts/ThreeBg"),
+
   },
   data: () => ({
     showSideBar: false,

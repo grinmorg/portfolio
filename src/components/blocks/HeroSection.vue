@@ -1,6 +1,5 @@
 <template>
   <section class="hero">
-    <ThreeBg />
     <div class="container">
       <div class="hero__box">
         <VueTextGlitch class="hero__text" :text="$t('base.hello.1')">
@@ -18,7 +17,6 @@ import VueTextGlitch from "vue-text-glitch";
 export default {
   data: () => ({}),
   components: {
-    ThreeBg: () => import("@/components/layouts/ThreeBg"),
     VueTextGlitch,
   },
 };
