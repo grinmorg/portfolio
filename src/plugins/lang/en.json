@@ -15,8 +15,8 @@
     "service": "site-service",
     "indev": "in developing",
     "hello": {
-      "1": "Hi",
-      "2": "Need website?"
+      "1": "Best practices",
+      "2": "for your business"
     }
   },
   "header": {
@@ -26,7 +26,7 @@
     "contacts": "Contacts"
   },
   "home": {
-    "text": "I am a freelance front-end developer. I am engaged in the creation of sites, primarily on the CMS. I take on sites of varying complexity, such as: ",
+    "text": "I am a web developer<br> I am engaged in the creation of sites,<br> both on a template and from scratch. I take on sites of varying complexity, such as: ",
     "textSpans": {
       "1": "Landing page",
       "2": "business sites",

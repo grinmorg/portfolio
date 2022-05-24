@@ -19,6 +19,9 @@ export default {
     },
     clock: null,
     particle: null,
+    parameters: {
+      count: 2000,
+    },
   }),
   methods: {
     init() {
@@ -34,7 +37,7 @@ export default {
         0.1,
         500
       );
-      this.camera.position.z = 1;
+      this.camera.position.z = 5;
 
       // Scene
       this.scene = new THREE.Scene();
@@ -56,18 +59,21 @@ export default {
        * Objects
        */
 
-      // particles marshmellow
       this.particle = new THREE.Object3D();
       this.scene.add(this.particle);
 
+      // particles marshmellow
+
       const particlesGeometry = new THREE.BufferGeometry();
-      const count = 5000;
 
-      const positions = new Float32Array(count * 3);
-      const colors = new Float32Array(count * 3);
+      const positions = new Float32Array(this.parameters.count * 3);
+      const colors = new Float32Array(this.parameters.count * 3);
 
-      for (let i = 0; i < count * 3; i++) {
+      for (let i = 0; i < this.parameters.count * 3; i++) {
+        // Рандомные позиции от -5 до 5
         positions[i] = (Math.random() - 0.5) * 10;
+
+        // Рандомнымные цвета по RGB от 0 до 1 - rgba(0.73, 0.23, 1)
         colors[i] = Math.random();
       }
 
@@ -86,13 +92,13 @@ export default {
       particlesMaterial.size = 0.15;
       particlesMaterial.sizeAttenuation = true;
 
-      particlesMaterial.color = new THREE.Color("#ff88cc");
+      // particlesMaterial.color = new THREE.Color("#ff88cc");
 
       particlesMaterial.transparent = true;
       particlesMaterial.alphaMap = particleTexture;
       // particlesMaterial.alphaTest = 0.01
-      // particlesMaterial.depthTest = false
-      particlesMaterial.depthWrite = false;
+      particlesMaterial.depthTest = false;
+      particlesMaterial.depthWrite = false; // если true - то будут видны через непрозрачные объекты
       particlesMaterial.blending = THREE.AdditiveBlending;
 
       particlesMaterial.vertexColors = true;
