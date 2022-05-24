@@ -231,17 +231,17 @@ export default {
 }
 
 @include tablets {
+  .cases {
+    &__list {
+      grid-template-columns: 1fr;
+    }
+  }
   .title {
     text-align: center;
   }
 }
 
 @include phones {
-  .cases {
-    &__list {
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    }
-  }
   .case {
     &__img {
       img {
