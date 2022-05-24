@@ -17,7 +17,8 @@
     "hello": {
       "1": "Best practices",
       "2": "for your business"
-    }
+    },
+    "blog": "Blog"
   },
   "header": {
     "aboutMe": "About me",
