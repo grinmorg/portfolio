@@ -28,6 +28,9 @@
             {{ $t("header.contacts") }}
           </router-link>
         </li>
+        <li class="nav__item">
+          <a href="https://grinmorg-blog.web.app/" class="nav__link">{{ $t("base.blog") }}</a>
+        </li>
       </ul>
     </nav>
     <div class="lang">

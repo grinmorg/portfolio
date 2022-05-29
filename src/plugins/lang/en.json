@@ -15,9 +15,10 @@
     "service": "site-service",
     "indev": "in developing",
     "hello": {
-      "1": "Best practices",
-      "2": "for your business"
-    }
+      "1": "Website development",
+      "2": "any complexity"
+    },
+    "blog": "Blog"
   },
   "header": {
     "aboutMe": "About me",
