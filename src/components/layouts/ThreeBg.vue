@@ -36,7 +36,7 @@ export default {
   right: 0;
   outline: none;
   z-index: -1;
-  opacity: 0.1;
+  opacity: 0.3;
 
   canvas {
     background: transparent;

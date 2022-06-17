@@ -18,7 +18,8 @@
       "1": "Website development",
       "2": "any complexity"
     },
-    "blog": "Blog"
+    "blog": "Blog",
+    "desc": "Open description"
   },
   "header": {
     "aboutMe": "About me",

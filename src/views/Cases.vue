@@ -3,44 +3,16 @@
     <div class="container">
       <h2 class="title">Портфолио</h2>
       <ul class="cases__list">
-        <li class="cases__item case" style="grid-row: span 6" ref="case" v-for="(item, idx) in cases" :key="idx" v-tilt="{
-          perspective: 1200,
-          scale: 1.05,
-        }">
-          <a :href="item.url" target="_blank" class="case__link">
-            <div v-if="!item.ready" class="case__dev">
-              {{ $t("base.indev") }}
-            </div>
-            <div v-if="item.img" class="case__img">
-              <img :src="item.img" alt="photo" />
-            </div>
-            <div v-else class="case__preview">
-              <span>{{ item.name }}</span>
-            </div>
-            <p class="case__name" v-if="item.name">{{ item.name }}</p>
-            <p class="case__desc" v-if="item.desc">{{ item.desc }}</p>
-            <ul class="tags">
-              <li class="tags__item" v-for="(tag, idxTag) in item.tags" :key="idxTag">
-                <span v-if="tag === 'Многостраничный сайт'">{{
-                    $t("base.multipage")
-                }}</span>
-                <span v-else-if="tag === 'Сайт-каталог'">{{
-                    $t("base.catalog")
-                }}</span>
-                <span v-else-if="tag === 'Сайт-сервис'">{{
-                    $t("base.service")
-                }}</span>
-                <span v-else>{{ tag }}</span>
-              </li>
-            </ul>
-          </a>
-        </li>
+        <CaseItem v-for="(item, idx) in cases" :key="idx" :item="item" />
       </ul>
     </div>
   </div>
 </template>
 
 <script>
+import CaseItem from '@/components/atoms/CaseItem.vue'
+
+// Imgs
 import emptyImg from "@/assets/img/sidebarHeader.jpeg";
 import workVzamke24 from "@/assets/img/works/vzamke24.png";
 import workExpertDoors from "@/assets/img/works/expertDoors.png";
@@ -53,13 +25,16 @@ import DetailingRoom from "@/assets/img/works/DetailingRoom.png";
 
 export default {
   name: "Cases",
+  components: {
+    CaseItem
+  },
   data: () => ({
     emptyImg,
     cases: [
       {
         img: DetailingRoom,
         name: "Detailing Room",
-        desc: "Небольшой сайт для автомобильного детейлинга, выполненый в темных тонах. На сайте релизована различная анимацию, например при скролле до блоков и при открытии/закрытии модальных окон",
+        desc: "Небольшой сайт для автомобильного детейлинга, выполненый в темных тонах. На сайте релизована различная анимация (например при скролле)",
         tags: [
           "Многостраничный сайт",
           "WordPress",
@@ -73,7 +48,7 @@ export default {
       {
         img: IT159,
         name: "IT 159",
-        desc: "Интернет-магазин для провайдера интеренета. Реализован функционал корзины и оформления заказа с онлайн-оплатой",
+        desc: "Интернет-магазин для провайдера. Реализован функционал корзины и оформления заказа с онлайн-оплатой",
         tags: [
           "Интернет-магазин",
           "WordPress",
@@ -137,112 +112,3 @@ export default {
   }),
 };
 </script>
-
-<style lang="scss">
-@import "@/assets/scss/mixins";
-
-.cases {
-  margin-top: 150px;
-  overflow: hidden;
-  padding-bottom: 50px;
-
-  &__list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
-  }
-}
-
-.case {
-  width: 100%;
-  margin: 3rem auto 0;
-  background: var(--bg-case--light);
-  border-radius: 25px;
-  border-top: 1px solid var(--white);
-  border-bottom: 1px solid var(--white);
-  backdrop-filter: blur(4px);
-  background-clip: padding-box;
-  position: relative;
-  overflow: hidden;
-
-  &__name {
-    font-size: 2rem;
-    padding: 1rem;
-    text-transform: uppercase;
-    text-align: center;
-  }
-
-  &__desc {
-    padding-left: 1rem;
-    font-size: 1.6rem;
-    color: var(--neu-text);
-  }
-
-  &__link {
-    width: 100%;
-    color: var(--white);
-  }
-
-  &__img {
-    overflow: hidden;
-    height: 250px;
-    width: 100%;
-    border-radius: 25px 25px 0px 0px;
-    border-bottom: 2px solid var(--green);
-
-    img {
-      width: 100%;
-      height: 100%;
-      transition: 1s;
-      border-radius: 25px 25px 0 0;
-      object-fit: cover;
-    }
-  }
-
-  &__preview {
-    height: 250px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    span {
-      font-size: 4rem;
-      text-transform: uppercase;
-    }
-  }
-
-  &__dev {
-    width: 200px;
-    text-align: center;
-    position: absolute;
-    top: 50px;
-    right: -50px;
-    transform: rotate(45deg);
-    text-transform: uppercase;
-    font-size: 1.2rem;
-    background: var(--green);
-  }
-}
-
-@include tablets {
-  .cases {
-    &__list {
-      grid-template-columns: 1fr;
-    }
-  }
-
-  .title {
-    text-align: center;
-  }
-}
-
-@include phones {
-  .case {
-    &__img {
-      img {
-        object-position: left;
-      }
-    }
-  }
-}
-</style>
