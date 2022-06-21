@@ -15,8 +15,8 @@
     "service": "site-service",
     "indev": "in developing",
     "hello": {
-      "1": "Website development",
-      "2": "any complexity"
+      "1": "Hi",
+      "2": "Need website?"
     },
     "blog": "Blog",
     "desc": "Open description"
