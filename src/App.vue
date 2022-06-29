@@ -1,8 +1,9 @@
 <template>
-  <div id="app">
-    <Preloader />
+  <div id="app" :style="{ overflow: isLoading ? 'hidden' : 'auto' }">
+    <Transition>
+      <Preloader v-if="isLoading" />
+    </Transition>
     <Header />
-    <ThreeBg />
     <!-- <Sidebar
       :showSideBar="showSideBar"
       @openPopupCallback="openPopupCallback"
@@ -19,6 +20,9 @@
       <router-view @openPopupCallback="openPopupCallback" />
     </main>
     <callback-popup :open="isOpenCallbackPopup" @close="closePopupCallback" />
+
+    <ThreeBg />
+
   </div>
 </template>
 
@@ -36,6 +40,7 @@ export default {
   data: () => ({
     showSideBar: false,
     isOpenCallbackPopup: false,
+    isLoading: true,
   }),
 
   methods: {
@@ -53,6 +58,13 @@ export default {
       }
     });
   },
+
+  mounted() {
+    // TODO: Убрать setTimeout, когда буду получать данные из firebase store
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 2000);
+  }
 };
 </script>
 
@@ -60,4 +72,14 @@ export default {
 @import "@/assets/scss/vendor/reset.scss";
 @import "@/assets/scss/variables.scss";
 @import "@/assets/scss/styles.scss";
+
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 1s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
 </style>

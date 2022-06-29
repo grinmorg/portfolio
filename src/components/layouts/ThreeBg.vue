@@ -5,24 +5,34 @@
 </template>
 
 <script>
-import { noisyLinesBackground } from 'threejs-toys'
+import { swarmBackground } from 'threejs-toys'
 
 export default {
   name: "ThreeBg",
   data: () => ({
-
+    bg: undefined,
   }),
 
+  methods: {
+    onClick() {
+      this.bg.setColors([Math.random() * 0xffffff, Math.random() * 0xffffff])
+    }
+  },
+
   mounted() {
-    noisyLinesBackground({
+    this.bg = swarmBackground({
       el: document.querySelector('.three-bg'),
-      colors: [0x000000, 0xAB6CF6],
-      minStroke: 0.5,
-      maxStroke: 2,
-      timeCoef: 0.0002,
-      coordScale: 2,
-      displacementScale: 0.02
+      eventsEl: null,
+      gpgpuSize: 256,
+      color: [Math.random() * 0xffffff, Math.random() * 0xffffff],
+      geometry: 'default'
     })
+
+    document.body.addEventListener('click', this.onClick)
+  },
+
+  destroyed() {
+    document.body.removeEventListener('click', this.onClick);
   },
 };
 </script>

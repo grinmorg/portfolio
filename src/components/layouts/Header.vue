@@ -122,8 +122,7 @@ export default {
 
     &:hover {
       .nav__link {
-        background: var(--green);
-        color: var(--bg-header);
+        border-bottom: 3px solid var(--green);
       }
     }
   }
@@ -137,8 +136,14 @@ export default {
     text-transform: uppercase;
     color: var(--white);
     font-family: var(--f_Play);
+    border-bottom: 3px solid transparent;
 
     transition: 0.2s;
+
+
+    &.router-link-exact-active {
+      color: var(--green-text);
+    }
   }
 }
 

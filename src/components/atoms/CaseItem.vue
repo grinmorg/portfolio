@@ -1,5 +1,6 @@
 <template>
-  <li class="cases__item case" style="grid-row: span 6" ref="case" @mouseover="showDesc = true" @mouseleave="showDesc = false">
+  <li class="cases__item case" style="grid-row: span 6" ref="case" @mouseover="showDesc = true"
+    @mouseleave="showDesc = false">
     <a :href="item.url" target="_blank" class="case__link">
       <div v-if="!item.ready" class="case__dev">
         {{ $t("base.indev") }}
@@ -11,15 +12,11 @@
         <span>{{ item.name }}</span>
       </div>
       <p class="case__name" v-if="item.name">{{ item.name }}</p>
-      <Popper
-          :is-open="showDesc"
-          :anchor-el="$refs.tags"
-          placement="top"
-        >
-          <div id="popper-content">
-            {{ item.desc }}
-          </div>
-        </Popper>
+      <Popper :is-open="showDesc" :anchor-el="$refs.tags" placement="top">
+        <div id="popper-content">
+          {{ item.desc }}
+        </div>
+      </Popper>
       <ul class="tags" ref="tags">
         <li class="tags__item" v-for="(tag, idxTag) in item.tags" :key="idxTag">
           <span v-if="tag === 'Многостраничный сайт'">{{
@@ -29,7 +26,7 @@
               $t("base.catalog")
           }}</span>
           <span v-else-if="tag === 'Сайт-сервис'">{{
-          $t("base.service")
+              $t("base.service")
           }}</span>
           <span v-else>{{ tag }}</span>
         </li>
